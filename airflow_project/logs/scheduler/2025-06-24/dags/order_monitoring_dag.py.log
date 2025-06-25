@@ -1,0 +1,7 @@
+[2025-06-25T01:10:25.397+0200] {processor.py:157} INFO - Started process (PID=172248) to work on /home/atef/project/E-Commerce-Order-Pipeline/airflow_project/dags/dags/order_monitoring_dag.py
+[2025-06-25T01:10:25.410+0200] {processor.py:826} INFO - Processing file /home/atef/project/E-Commerce-Order-Pipeline/airflow_project/dags/dags/order_monitoring_dag.py for tasks to queue
+[2025-06-25T01:10:25.415+0200] {logging_mixin.py:149} INFO - [2025-06-25T01:10:25.414+0200] {dagbag.py:541} INFO - Filling up the DagBag from /home/atef/project/E-Commerce-Order-Pipeline/airflow_project/dags/dags/order_monitoring_dag.py
+[2025-06-25T01:10:25.815+0200] {processor.py:836} INFO - DAG(s) dict_keys(['order_monitoring_dag16']) retrieved from /home/atef/project/E-Commerce-Order-Pipeline/airflow_project/dags/dags/order_monitoring_dag.py
+[2025-06-25T01:10:26.360+0200] {logging_mixin.py:149} INFO - [2025-06-25T01:10:26.360+0200] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-06-25T01:10:26.607+0200] {logging_mixin.py:149} INFO - [2025-06-25T01:10:26.607+0200] {dag.py:3486} INFO - Setting next_dagrun for order_monitoring_dag16 to 2025-06-24T22:00:00+00:00, run_after=2025-06-24T23:00:00+00:00
+[2025-06-25T01:10:26.731+0200] {processor.py:179} INFO - Processing /home/atef/project/E-Commerce-Order-Pipeline/airflow_project/dags/dags/order_monitoring_dag.py took 1.414 seconds

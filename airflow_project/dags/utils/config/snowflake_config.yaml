@@ -1,0 +1,8 @@
+snowflake:
+  user: ATEFMOUSA710
+  password: a01091289657A@
+  account: QLZNNBS-HQ92472
+  warehouse: COMPUTE_WH
+  database: ECOMMERCE_DB
+  schema: ANALYTICS
+  role: ACCOUNTADMIN
