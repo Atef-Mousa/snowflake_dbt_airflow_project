@@ -9336,3 +9336,1458 @@ FROM base
 [0m14:00:20.227262 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 9.226679, "process_in_blocks": "0", "process_kernel_time": 0.502834, "process_mem_max_rss": "140588", "process_out_blocks": "2072", "process_user_time": 5.096516}
 [0m14:00:20.229127 [debug] [MainThread]: Command `dbt run` succeeded at 14:00:20.228993 after 9.23 seconds
 [0m14:00:20.230482 [debug] [MainThread]: Flushing usage events
+[0m15:26:47.539028 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 15:26:47.809159 | 91431578-3461-4413-b7d8-d402055f5d13 ==============================
+[0m15:26:47.809159 [info ] [MainThread]: Running with dbt=1.10.2
+[0m15:26:47.815629 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/atef/.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt run', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m15:27:03.889322 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m15:27:04.809087 [debug] [MainThread]: checksum: 1adc40777973ef30f45f80b3b6d04d5013c1edd53d96363881b3b199e612468b, vars: {}, profile: , target: , version: 1.10.2
+[0m15:27:07.565961 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m15:27:07.567287 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m15:27:08.432568 [debug] [MainThread]: Wrote artifact WritableManifest to /home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/target/manifest.json
+[0m15:27:08.439888 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/target/semantic_manifest.json
+[0m15:27:08.474902 [info ] [MainThread]: Found 4 models, 476 macros
+[0m15:27:08.519312 [info ] [MainThread]: 
+[0m15:27:08.521601 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m15:27:08.523376 [info ] [MainThread]: 
+[0m15:27:08.525694 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m15:27:08.598900 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ECOMMERCE_DB'
+[0m15:27:13.271339 [debug] [ThreadPool]: Using snowflake connection "list_ECOMMERCE_DB"
+[0m15:27:13.272934 [debug] [ThreadPool]: On list_ECOMMERCE_DB: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "connection_name": "list_ECOMMERCE_DB"} */
+show terse schemas in database ECOMMERCE_DB
+    limit 10000
+[0m15:27:13.274009 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:27:15.533682 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 2.259 seconds
+[0m15:27:15.540839 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ECOMMERCE_DB_ANALYTICS'
+[0m15:27:15.558828 [debug] [ThreadPool]: Using snowflake connection "list_ECOMMERCE_DB_ANALYTICS"
+[0m15:27:15.559871 [debug] [ThreadPool]: On list_ECOMMERCE_DB_ANALYTICS: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "connection_name": "list_ECOMMERCE_DB_ANALYTICS"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m15:27:15.560739 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:27:16.571518 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 1.011 seconds
+[0m15:27:16.619637 [debug] [ThreadPool]: Using snowflake connection "list_ECOMMERCE_DB_ANALYTICS"
+[0m15:27:16.620813 [debug] [ThreadPool]: On list_ECOMMERCE_DB_ANALYTICS: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "connection_name": "list_ECOMMERCE_DB_ANALYTICS"} */
+show objects in ECOMMERCE_DB.ANALYTICS
+    limit 10000
+    
+;
+[0m15:27:16.872668 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 0.251 seconds
+[0m15:27:16.880111 [debug] [ThreadPool]: Using snowflake connection "list_ECOMMERCE_DB_ANALYTICS"
+[0m15:27:16.881704 [debug] [ThreadPool]: On list_ECOMMERCE_DB_ANALYTICS: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "connection_name": "list_ECOMMERCE_DB_ANALYTICS"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m15:27:17.077370 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.192 seconds
+[0m15:27:17.100417 [debug] [Thread-1  ]: Began running node model.dbt_ecommerce.stg_customers
+[0m15:27:17.102353 [info ] [Thread-1  ]: 1 of 4 START sql view model ANALYTICS.stg_customers ............................ [RUN]
+[0m15:27:17.104464 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_ECOMMERCE_DB_ANALYTICS, now model.dbt_ecommerce.stg_customers)
+[0m15:27:17.105827 [debug] [Thread-1  ]: Began compiling node model.dbt_ecommerce.stg_customers
+[0m15:27:17.173070 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_ecommerce.stg_customers"
+[0m15:27:17.175987 [debug] [Thread-1  ]: Began executing node model.dbt_ecommerce.stg_customers
+[0m15:27:17.727894 [debug] [Thread-1  ]: Writing runtime sql for node "model.dbt_ecommerce.stg_customers"
+[0m15:27:17.730948 [debug] [Thread-1  ]: Using snowflake connection "model.dbt_ecommerce.stg_customers"
+[0m15:27:17.732178 [debug] [Thread-1  ]: On model.dbt_ecommerce.stg_customers: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "node_id": "model.dbt_ecommerce.stg_customers"} */
+create or replace   view ECOMMERCE_DB.ANALYTICS.stg_customers
+  
+   as (
+    SELECT *
+FROM raw.customers
+  );
+[0m15:27:18.078490 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 0.345 seconds
+[0m15:27:18.185042 [info ] [Thread-1  ]: 1 of 4 OK created sql view model ANALYTICS.stg_customers ....................... [[32mSUCCESS 1[0m in 1.08s]
+[0m15:27:18.187341 [debug] [Thread-1  ]: Finished running node model.dbt_ecommerce.stg_customers
+[0m15:27:18.188854 [debug] [Thread-1  ]: Began running node model.dbt_ecommerce.stg_orders
+[0m15:27:18.190217 [info ] [Thread-1  ]: 2 of 4 START sql view model ANALYTICS.stg_orders ............................... [RUN]
+[0m15:27:18.192265 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.dbt_ecommerce.stg_customers, now model.dbt_ecommerce.stg_orders)
+[0m15:27:18.193296 [debug] [Thread-1  ]: Began compiling node model.dbt_ecommerce.stg_orders
+[0m15:27:18.197587 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_ecommerce.stg_orders"
+[0m15:27:18.199787 [debug] [Thread-1  ]: Began executing node model.dbt_ecommerce.stg_orders
+[0m15:27:18.204135 [debug] [Thread-1  ]: Writing runtime sql for node "model.dbt_ecommerce.stg_orders"
+[0m15:27:18.206391 [debug] [Thread-1  ]: Using snowflake connection "model.dbt_ecommerce.stg_orders"
+[0m15:27:18.207339 [debug] [Thread-1  ]: On model.dbt_ecommerce.stg_orders: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "node_id": "model.dbt_ecommerce.stg_orders"} */
+create or replace   view ECOMMERCE_DB.ANALYTICS.stg_orders
+  
+   as (
+    SELECT *
+FROM raw.orders
+  );
+[0m15:27:18.632374 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 0.424 seconds
+[0m15:27:18.638888 [info ] [Thread-1  ]: 2 of 4 OK created sql view model ANALYTICS.stg_orders .......................... [[32mSUCCESS 1[0m in 0.45s]
+[0m15:27:18.641187 [debug] [Thread-1  ]: Finished running node model.dbt_ecommerce.stg_orders
+[0m15:27:18.642610 [debug] [Thread-1  ]: Began running node model.dbt_ecommerce.stg_shipments
+[0m15:27:18.644005 [info ] [Thread-1  ]: 3 of 4 START sql view model ANALYTICS.stg_shipments ............................ [RUN]
+[0m15:27:18.646140 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.dbt_ecommerce.stg_orders, now model.dbt_ecommerce.stg_shipments)
+[0m15:27:18.647358 [debug] [Thread-1  ]: Began compiling node model.dbt_ecommerce.stg_shipments
+[0m15:27:18.651964 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_ecommerce.stg_shipments"
+[0m15:27:18.654673 [debug] [Thread-1  ]: Began executing node model.dbt_ecommerce.stg_shipments
+[0m15:27:18.697693 [debug] [Thread-1  ]: Writing runtime sql for node "model.dbt_ecommerce.stg_shipments"
+[0m15:27:18.700623 [debug] [Thread-1  ]: Using snowflake connection "model.dbt_ecommerce.stg_shipments"
+[0m15:27:18.701987 [debug] [Thread-1  ]: On model.dbt_ecommerce.stg_shipments: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "node_id": "model.dbt_ecommerce.stg_shipments"} */
+create or replace   view ECOMMERCE_DB.ANALYTICS.stg_shipments
+  
+   as (
+    SELECT *
+FROM raw.shipments
+  );
+[0m15:27:19.092453 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 0.388 seconds
+[0m15:27:19.113765 [info ] [Thread-1  ]: 3 of 4 OK created sql view model ANALYTICS.stg_shipments ....................... [[32mSUCCESS 1[0m in 0.47s]
+[0m15:27:19.117467 [debug] [Thread-1  ]: Finished running node model.dbt_ecommerce.stg_shipments
+[0m15:27:19.120406 [debug] [Thread-1  ]: Began running node model.dbt_ecommerce.order_status
+[0m15:27:19.121743 [info ] [Thread-1  ]: 4 of 4 START sql view model ANALYTICS.order_status ............................. [RUN]
+[0m15:27:19.140136 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.dbt_ecommerce.stg_shipments, now model.dbt_ecommerce.order_status)
+[0m15:27:19.141232 [debug] [Thread-1  ]: Began compiling node model.dbt_ecommerce.order_status
+[0m15:27:19.206871 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_ecommerce.order_status"
+[0m15:27:19.211187 [debug] [Thread-1  ]: Began executing node model.dbt_ecommerce.order_status
+[0m15:27:19.265210 [debug] [Thread-1  ]: Writing runtime sql for node "model.dbt_ecommerce.order_status"
+[0m15:27:19.270997 [debug] [Thread-1  ]: Using snowflake connection "model.dbt_ecommerce.order_status"
+[0m15:27:19.272982 [debug] [Thread-1  ]: On model.dbt_ecommerce.order_status: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "node_id": "model.dbt_ecommerce.order_status"} */
+create or replace   view ECOMMERCE_DB.ANALYTICS.order_status
+  
+   as (
+    WITH base AS (
+  SELECT o.order_id, c.name AS customer_name, o.order_date, s.status,
+         s.shipped_at, s.delivered_at,
+         DATEDIFF('hour', s.shipped_at, s.delivered_at) AS delivery_hours
+  FROM ECOMMERCE_DB.ANALYTICS.stg_orders o
+  JOIN ECOMMERCE_DB.ANALYTICS.stg_shipments s ON o.order_id = s.order_id
+  JOIN ECOMMERCE_DB.ANALYTICS.stg_customers c ON o.customer_id = c.customer_id
+)
+
+SELECT *,
+       CASE WHEN status = 'shipped' AND delivery_hours > 48 THEN 'DELAYED' ELSE status END AS final_status
+FROM base
+  );
+[0m15:27:19.912939 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 0.637 seconds
+[0m15:27:19.918431 [info ] [Thread-1  ]: 4 of 4 OK created sql view model ANALYTICS.order_status ........................ [[32mSUCCESS 1[0m in 0.78s]
+[0m15:27:19.921190 [debug] [Thread-1  ]: Finished running node model.dbt_ecommerce.order_status
+[0m15:27:19.925380 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:27:19.926544 [debug] [MainThread]: Connection 'list_ECOMMERCE_DB' was left open.
+[0m15:27:19.927589 [debug] [MainThread]: On list_ECOMMERCE_DB: Close
+[0m15:27:20.278470 [debug] [MainThread]: Connection 'model.dbt_ecommerce.order_status' was left open.
+[0m15:27:20.281382 [debug] [MainThread]: On model.dbt_ecommerce.order_status: Close
+[0m15:27:20.647937 [info ] [MainThread]: 
+[0m15:27:20.654808 [info ] [MainThread]: Finished running 4 view models in 0 hours 0 minutes and 12.12 seconds (12.12s).
+[0m15:27:20.659448 [debug] [MainThread]: Command end result
+[0m15:27:20.818901 [debug] [MainThread]: Wrote artifact WritableManifest to /home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/target/manifest.json
+[0m15:27:20.825301 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/target/semantic_manifest.json
+[0m15:27:20.836107 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/target/run_results.json
+[0m15:27:20.837291 [info ] [MainThread]: 
+[0m15:27:20.839104 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m15:27:20.840449 [info ] [MainThread]: 
+[0m15:27:20.842004 [info ] [MainThread]: Done. PASS=4 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=4
+[0m15:27:20.867783 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 34.004078, "process_in_blocks": "0", "process_kernel_time": 10.091453, "process_mem_max_rss": "138868", "process_out_blocks": "2080", "process_user_time": 22.96305}
+[0m15:27:20.869766 [debug] [MainThread]: Command `dbt run` succeeded at 15:27:20.869320 after 34.01 seconds
+[0m15:27:20.870889 [debug] [MainThread]: Flushing usage events
+[0m16:00:33.527975 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 16:00:33.801779 | a72c4453-f822-40b3-934e-b684fc40bde5 ==============================
+[0m16:00:33.801779 [info ] [MainThread]: Running with dbt=1.10.2
+[0m16:00:33.810124 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': '/home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/logs', 'fail_fast': 'False', 'profiles_dir': '/home/atef/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'log_format': 'default', 'invocation_command': 'dbt run', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m16:00:53.663071 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m16:00:58.913207 [debug] [MainThread]: checksum: 1adc40777973ef30f45f80b3b6d04d5013c1edd53d96363881b3b199e612468b, vars: {}, profile: , target: , version: 1.10.2
+[0m16:01:03.318664 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m16:01:03.320188 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m16:01:03.565440 [debug] [MainThread]: Wrote artifact WritableManifest to /home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/target/manifest.json
+[0m16:01:03.582237 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/target/semantic_manifest.json
+[0m16:01:03.642395 [info ] [MainThread]: Found 4 models, 476 macros
+[0m16:01:03.648345 [info ] [MainThread]: 
+[0m16:01:03.650334 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m16:01:03.651974 [info ] [MainThread]: 
+[0m16:01:03.655017 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m16:01:03.669210 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ECOMMERCE_DB'
+[0m16:01:06.939694 [debug] [ThreadPool]: Using snowflake connection "list_ECOMMERCE_DB"
+[0m16:01:06.941061 [debug] [ThreadPool]: On list_ECOMMERCE_DB: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "connection_name": "list_ECOMMERCE_DB"} */
+show terse schemas in database ECOMMERCE_DB
+    limit 10000
+[0m16:01:06.942186 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:01:12.117688 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 5.175 seconds
+[0m16:01:12.125709 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ECOMMERCE_DB_ANALYTICS'
+[0m16:01:12.143198 [debug] [ThreadPool]: Using snowflake connection "list_ECOMMERCE_DB_ANALYTICS"
+[0m16:01:12.144383 [debug] [ThreadPool]: On list_ECOMMERCE_DB_ANALYTICS: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "connection_name": "list_ECOMMERCE_DB_ANALYTICS"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m16:01:12.145435 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:01:12.921661 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.776 seconds
+[0m16:01:12.928873 [debug] [ThreadPool]: Using snowflake connection "list_ECOMMERCE_DB_ANALYTICS"
+[0m16:01:12.930072 [debug] [ThreadPool]: On list_ECOMMERCE_DB_ANALYTICS: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "connection_name": "list_ECOMMERCE_DB_ANALYTICS"} */
+show objects in ECOMMERCE_DB.ANALYTICS
+    limit 10000
+    
+;
+[0m16:01:13.179619 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 0.248 seconds
+[0m16:01:13.188280 [debug] [ThreadPool]: Using snowflake connection "list_ECOMMERCE_DB_ANALYTICS"
+[0m16:01:13.190746 [debug] [ThreadPool]: On list_ECOMMERCE_DB_ANALYTICS: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "connection_name": "list_ECOMMERCE_DB_ANALYTICS"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m16:01:13.376964 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.185 seconds
+[0m16:01:13.401422 [debug] [Thread-1  ]: Began running node model.dbt_ecommerce.stg_customers
+[0m16:01:13.403280 [info ] [Thread-1  ]: 1 of 4 START sql view model ANALYTICS.stg_customers ............................ [RUN]
+[0m16:01:13.407612 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_ECOMMERCE_DB_ANALYTICS, now model.dbt_ecommerce.stg_customers)
+[0m16:01:13.408923 [debug] [Thread-1  ]: Began compiling node model.dbt_ecommerce.stg_customers
+[0m16:01:13.438273 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_ecommerce.stg_customers"
+[0m16:01:13.442844 [debug] [Thread-1  ]: Began executing node model.dbt_ecommerce.stg_customers
+[0m16:01:13.716440 [debug] [Thread-1  ]: Writing runtime sql for node "model.dbt_ecommerce.stg_customers"
+[0m16:01:13.720058 [debug] [Thread-1  ]: Using snowflake connection "model.dbt_ecommerce.stg_customers"
+[0m16:01:13.721112 [debug] [Thread-1  ]: On model.dbt_ecommerce.stg_customers: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "node_id": "model.dbt_ecommerce.stg_customers"} */
+create or replace   view ECOMMERCE_DB.ANALYTICS.stg_customers
+  
+   as (
+    SELECT *
+FROM raw.customers
+  );
+[0m16:01:14.066040 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 0.343 seconds
+[0m16:01:14.110132 [info ] [Thread-1  ]: 1 of 4 OK created sql view model ANALYTICS.stg_customers ....................... [[32mSUCCESS 1[0m in 0.70s]
+[0m16:01:14.112653 [debug] [Thread-1  ]: Finished running node model.dbt_ecommerce.stg_customers
+[0m16:01:14.113686 [debug] [Thread-1  ]: Began running node model.dbt_ecommerce.stg_orders
+[0m16:01:14.114987 [info ] [Thread-1  ]: 2 of 4 START sql view model ANALYTICS.stg_orders ............................... [RUN]
+[0m16:01:14.116706 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.dbt_ecommerce.stg_customers, now model.dbt_ecommerce.stg_orders)
+[0m16:01:14.117640 [debug] [Thread-1  ]: Began compiling node model.dbt_ecommerce.stg_orders
+[0m16:01:14.121902 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_ecommerce.stg_orders"
+[0m16:01:14.123848 [debug] [Thread-1  ]: Began executing node model.dbt_ecommerce.stg_orders
+[0m16:01:14.129192 [debug] [Thread-1  ]: Writing runtime sql for node "model.dbt_ecommerce.stg_orders"
+[0m16:01:14.131742 [debug] [Thread-1  ]: Using snowflake connection "model.dbt_ecommerce.stg_orders"
+[0m16:01:14.132971 [debug] [Thread-1  ]: On model.dbt_ecommerce.stg_orders: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "node_id": "model.dbt_ecommerce.stg_orders"} */
+create or replace   view ECOMMERCE_DB.ANALYTICS.stg_orders
+  
+   as (
+    SELECT *
+FROM raw.orders
+  );
+[0m16:01:14.491890 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 0.357 seconds
+[0m16:01:14.499033 [info ] [Thread-1  ]: 2 of 4 OK created sql view model ANALYTICS.stg_orders .......................... [[32mSUCCESS 1[0m in 0.38s]
+[0m16:01:14.502246 [debug] [Thread-1  ]: Finished running node model.dbt_ecommerce.stg_orders
+[0m16:01:14.504219 [debug] [Thread-1  ]: Began running node model.dbt_ecommerce.stg_shipments
+[0m16:01:14.506220 [info ] [Thread-1  ]: 3 of 4 START sql view model ANALYTICS.stg_shipments ............................ [RUN]
+[0m16:01:14.508712 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.dbt_ecommerce.stg_orders, now model.dbt_ecommerce.stg_shipments)
+[0m16:01:14.509960 [debug] [Thread-1  ]: Began compiling node model.dbt_ecommerce.stg_shipments
+[0m16:01:14.513504 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_ecommerce.stg_shipments"
+[0m16:01:14.516033 [debug] [Thread-1  ]: Began executing node model.dbt_ecommerce.stg_shipments
+[0m16:01:14.521126 [debug] [Thread-1  ]: Writing runtime sql for node "model.dbt_ecommerce.stg_shipments"
+[0m16:01:14.523629 [debug] [Thread-1  ]: Using snowflake connection "model.dbt_ecommerce.stg_shipments"
+[0m16:01:14.524402 [debug] [Thread-1  ]: On model.dbt_ecommerce.stg_shipments: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "node_id": "model.dbt_ecommerce.stg_shipments"} */
+create or replace   view ECOMMERCE_DB.ANALYTICS.stg_shipments
+  
+   as (
+    SELECT *
+FROM raw.shipments
+  );
+[0m16:01:14.853350 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 0.328 seconds
+[0m16:01:14.860373 [info ] [Thread-1  ]: 3 of 4 OK created sql view model ANALYTICS.stg_shipments ....................... [[32mSUCCESS 1[0m in 0.35s]
+[0m16:01:14.863598 [debug] [Thread-1  ]: Finished running node model.dbt_ecommerce.stg_shipments
+[0m16:01:14.865988 [debug] [Thread-1  ]: Began running node model.dbt_ecommerce.order_status
+[0m16:01:14.867340 [info ] [Thread-1  ]: 4 of 4 START sql view model ANALYTICS.order_status ............................. [RUN]
+[0m16:01:14.869625 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.dbt_ecommerce.stg_shipments, now model.dbt_ecommerce.order_status)
+[0m16:01:14.870697 [debug] [Thread-1  ]: Began compiling node model.dbt_ecommerce.order_status
+[0m16:01:14.877097 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_ecommerce.order_status"
+[0m16:01:14.879901 [debug] [Thread-1  ]: Began executing node model.dbt_ecommerce.order_status
+[0m16:01:14.887558 [debug] [Thread-1  ]: Writing runtime sql for node "model.dbt_ecommerce.order_status"
+[0m16:01:15.005830 [debug] [Thread-1  ]: Using snowflake connection "model.dbt_ecommerce.order_status"
+[0m16:01:15.009249 [debug] [Thread-1  ]: On model.dbt_ecommerce.order_status: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "node_id": "model.dbt_ecommerce.order_status"} */
+create or replace   view ECOMMERCE_DB.ANALYTICS.order_status
+  
+   as (
+    WITH base AS (
+  SELECT o.order_id, c.name AS customer_name, o.order_date, s.status,
+         s.shipped_at, s.delivered_at,
+         DATEDIFF('hour', s.shipped_at, s.delivered_at) AS delivery_hours
+  FROM ECOMMERCE_DB.ANALYTICS.stg_orders o
+  JOIN ECOMMERCE_DB.ANALYTICS.stg_shipments s ON o.order_id = s.order_id
+  JOIN ECOMMERCE_DB.ANALYTICS.stg_customers c ON o.customer_id = c.customer_id
+)
+
+SELECT *,
+       CASE WHEN status = 'shipped' AND delivery_hours > 48 THEN 'DELAYED' ELSE status END AS final_status
+FROM base
+  );
+[0m16:01:15.496915 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 0.484 seconds
+[0m16:01:15.505762 [info ] [Thread-1  ]: 4 of 4 OK created sql view model ANALYTICS.order_status ........................ [[32mSUCCESS 1[0m in 0.63s]
+[0m16:01:15.507858 [debug] [Thread-1  ]: Finished running node model.dbt_ecommerce.order_status
+[0m16:01:15.513237 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m16:01:15.514193 [debug] [MainThread]: Connection 'list_ECOMMERCE_DB' was left open.
+[0m16:01:15.515312 [debug] [MainThread]: On list_ECOMMERCE_DB: Close
+[0m16:01:15.913776 [debug] [MainThread]: Connection 'model.dbt_ecommerce.order_status' was left open.
+[0m16:01:15.915754 [debug] [MainThread]: On model.dbt_ecommerce.order_status: Close
+[0m16:01:16.378414 [info ] [MainThread]: 
+[0m16:01:16.383203 [info ] [MainThread]: Finished running 4 view models in 0 hours 0 minutes and 12.72 seconds (12.72s).
+[0m16:01:16.389104 [debug] [MainThread]: Command end result
+[0m16:01:16.444870 [debug] [MainThread]: Wrote artifact WritableManifest to /home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/target/manifest.json
+[0m16:01:16.449108 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/target/semantic_manifest.json
+[0m16:01:16.461312 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/target/run_results.json
+[0m16:01:16.462429 [info ] [MainThread]: 
+[0m16:01:16.464310 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m16:01:16.465944 [info ] [MainThread]: 
+[0m16:01:16.467375 [info ] [MainThread]: Done. PASS=4 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=4
+[0m16:01:16.470804 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 43.221863, "process_in_blocks": "0", "process_kernel_time": 8.241552, "process_mem_max_rss": "138608", "process_out_blocks": "2088", "process_user_time": 21.126682}
+[0m16:01:16.472648 [debug] [MainThread]: Command `dbt run` succeeded at 16:01:16.472496 after 43.22 seconds
+[0m16:01:16.474034 [debug] [MainThread]: Flushing usage events
+[0m17:00:09.769762 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 17:00:09.794056 | 1d87699b-cb72-411f-b582-1eb273e6cd90 ==============================
+[0m17:00:09.794056 [info ] [MainThread]: Running with dbt=1.10.2
+[0m17:00:09.801784 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/atef/.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt run', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m17:00:11.039948 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m17:00:11.967796 [debug] [MainThread]: checksum: 1adc40777973ef30f45f80b3b6d04d5013c1edd53d96363881b3b199e612468b, vars: {}, profile: , target: , version: 1.10.2
+[0m17:00:12.333945 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m17:00:12.340275 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m17:00:12.522310 [debug] [MainThread]: Wrote artifact WritableManifest to /home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/target/manifest.json
+[0m17:00:12.529891 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/target/semantic_manifest.json
+[0m17:00:12.560214 [info ] [MainThread]: Found 4 models, 476 macros
+[0m17:00:12.565735 [info ] [MainThread]: 
+[0m17:00:12.567324 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m17:00:12.568848 [info ] [MainThread]: 
+[0m17:00:12.570816 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m17:00:12.579303 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ECOMMERCE_DB'
+[0m17:00:12.738909 [debug] [ThreadPool]: Using snowflake connection "list_ECOMMERCE_DB"
+[0m17:00:12.739986 [debug] [ThreadPool]: On list_ECOMMERCE_DB: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "connection_name": "list_ECOMMERCE_DB"} */
+show terse schemas in database ECOMMERCE_DB
+    limit 10000
+[0m17:00:12.741018 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:00:14.045378 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 1.304 seconds
+[0m17:00:14.052088 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ECOMMERCE_DB_ANALYTICS'
+[0m17:00:14.071562 [debug] [ThreadPool]: Using snowflake connection "list_ECOMMERCE_DB_ANALYTICS"
+[0m17:00:14.073248 [debug] [ThreadPool]: On list_ECOMMERCE_DB_ANALYTICS: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "connection_name": "list_ECOMMERCE_DB_ANALYTICS"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m17:00:14.074444 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:00:14.971927 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.897 seconds
+[0m17:00:14.983366 [debug] [ThreadPool]: Using snowflake connection "list_ECOMMERCE_DB_ANALYTICS"
+[0m17:00:14.986188 [debug] [ThreadPool]: On list_ECOMMERCE_DB_ANALYTICS: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "connection_name": "list_ECOMMERCE_DB_ANALYTICS"} */
+show objects in ECOMMERCE_DB.ANALYTICS
+    limit 10000
+    
+;
+[0m17:00:15.200887 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 0.213 seconds
+[0m17:00:15.210457 [debug] [ThreadPool]: Using snowflake connection "list_ECOMMERCE_DB_ANALYTICS"
+[0m17:00:15.212935 [debug] [ThreadPool]: On list_ECOMMERCE_DB_ANALYTICS: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "connection_name": "list_ECOMMERCE_DB_ANALYTICS"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m17:00:15.406320 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.192 seconds
+[0m17:00:15.435447 [debug] [Thread-1  ]: Began running node model.dbt_ecommerce.stg_customers
+[0m17:00:15.437142 [info ] [Thread-1  ]: 1 of 4 START sql view model ANALYTICS.stg_customers ............................ [RUN]
+[0m17:00:15.439245 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_ECOMMERCE_DB_ANALYTICS, now model.dbt_ecommerce.stg_customers)
+[0m17:00:15.440405 [debug] [Thread-1  ]: Began compiling node model.dbt_ecommerce.stg_customers
+[0m17:00:15.452954 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_ecommerce.stg_customers"
+[0m17:00:15.456065 [debug] [Thread-1  ]: Began executing node model.dbt_ecommerce.stg_customers
+[0m17:00:15.679710 [debug] [Thread-1  ]: Writing runtime sql for node "model.dbt_ecommerce.stg_customers"
+[0m17:00:15.683258 [debug] [Thread-1  ]: Using snowflake connection "model.dbt_ecommerce.stg_customers"
+[0m17:00:15.684685 [debug] [Thread-1  ]: On model.dbt_ecommerce.stg_customers: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "node_id": "model.dbt_ecommerce.stg_customers"} */
+create or replace   view ECOMMERCE_DB.ANALYTICS.stg_customers
+  
+   as (
+    SELECT *
+FROM raw.customers
+  );
+[0m17:00:15.993212 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 0.307 seconds
+[0m17:00:16.037033 [info ] [Thread-1  ]: 1 of 4 OK created sql view model ANALYTICS.stg_customers ....................... [[32mSUCCESS 1[0m in 0.60s]
+[0m17:00:16.039239 [debug] [Thread-1  ]: Finished running node model.dbt_ecommerce.stg_customers
+[0m17:00:16.040367 [debug] [Thread-1  ]: Began running node model.dbt_ecommerce.stg_orders
+[0m17:00:16.041881 [info ] [Thread-1  ]: 2 of 4 START sql view model ANALYTICS.stg_orders ............................... [RUN]
+[0m17:00:16.044885 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.dbt_ecommerce.stg_customers, now model.dbt_ecommerce.stg_orders)
+[0m17:00:16.046172 [debug] [Thread-1  ]: Began compiling node model.dbt_ecommerce.stg_orders
+[0m17:00:16.049417 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_ecommerce.stg_orders"
+[0m17:00:16.051451 [debug] [Thread-1  ]: Began executing node model.dbt_ecommerce.stg_orders
+[0m17:00:16.057047 [debug] [Thread-1  ]: Writing runtime sql for node "model.dbt_ecommerce.stg_orders"
+[0m17:00:16.059413 [debug] [Thread-1  ]: Using snowflake connection "model.dbt_ecommerce.stg_orders"
+[0m17:00:16.060486 [debug] [Thread-1  ]: On model.dbt_ecommerce.stg_orders: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "node_id": "model.dbt_ecommerce.stg_orders"} */
+create or replace   view ECOMMERCE_DB.ANALYTICS.stg_orders
+  
+   as (
+    SELECT *
+FROM raw.orders
+  );
+[0m17:00:16.400158 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 0.337 seconds
+[0m17:00:16.415031 [info ] [Thread-1  ]: 2 of 4 OK created sql view model ANALYTICS.stg_orders .......................... [[32mSUCCESS 1[0m in 0.37s]
+[0m17:00:16.419031 [debug] [Thread-1  ]: Finished running node model.dbt_ecommerce.stg_orders
+[0m17:00:16.420897 [debug] [Thread-1  ]: Began running node model.dbt_ecommerce.stg_shipments
+[0m17:00:16.422947 [info ] [Thread-1  ]: 3 of 4 START sql view model ANALYTICS.stg_shipments ............................ [RUN]
+[0m17:00:16.426294 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.dbt_ecommerce.stg_orders, now model.dbt_ecommerce.stg_shipments)
+[0m17:00:16.429026 [debug] [Thread-1  ]: Began compiling node model.dbt_ecommerce.stg_shipments
+[0m17:00:16.433386 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_ecommerce.stg_shipments"
+[0m17:00:16.445117 [debug] [Thread-1  ]: Began executing node model.dbt_ecommerce.stg_shipments
+[0m17:00:16.451170 [debug] [Thread-1  ]: Writing runtime sql for node "model.dbt_ecommerce.stg_shipments"
+[0m17:00:16.462593 [debug] [Thread-1  ]: Using snowflake connection "model.dbt_ecommerce.stg_shipments"
+[0m17:00:16.465240 [debug] [Thread-1  ]: On model.dbt_ecommerce.stg_shipments: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "node_id": "model.dbt_ecommerce.stg_shipments"} */
+create or replace   view ECOMMERCE_DB.ANALYTICS.stg_shipments
+  
+   as (
+    SELECT *
+FROM raw.shipments
+  );
+[0m17:00:16.785060 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 0.318 seconds
+[0m17:00:16.790840 [info ] [Thread-1  ]: 3 of 4 OK created sql view model ANALYTICS.stg_shipments ....................... [[32mSUCCESS 1[0m in 0.36s]
+[0m17:00:16.793283 [debug] [Thread-1  ]: Finished running node model.dbt_ecommerce.stg_shipments
+[0m17:00:16.795712 [debug] [Thread-1  ]: Began running node model.dbt_ecommerce.order_status
+[0m17:00:16.797287 [info ] [Thread-1  ]: 4 of 4 START sql view model ANALYTICS.order_status ............................. [RUN]
+[0m17:00:16.800130 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.dbt_ecommerce.stg_shipments, now model.dbt_ecommerce.order_status)
+[0m17:00:16.801925 [debug] [Thread-1  ]: Began compiling node model.dbt_ecommerce.order_status
+[0m17:00:16.808224 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_ecommerce.order_status"
+[0m17:00:16.811154 [debug] [Thread-1  ]: Began executing node model.dbt_ecommerce.order_status
+[0m17:00:16.822303 [debug] [Thread-1  ]: Writing runtime sql for node "model.dbt_ecommerce.order_status"
+[0m17:00:16.826820 [debug] [Thread-1  ]: Using snowflake connection "model.dbt_ecommerce.order_status"
+[0m17:00:16.828235 [debug] [Thread-1  ]: On model.dbt_ecommerce.order_status: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "node_id": "model.dbt_ecommerce.order_status"} */
+create or replace   view ECOMMERCE_DB.ANALYTICS.order_status
+  
+   as (
+    WITH base AS (
+  SELECT o.order_id, c.name AS customer_name, o.order_date, s.status,
+         s.shipped_at, s.delivered_at,
+         DATEDIFF('hour', s.shipped_at, s.delivered_at) AS delivery_hours
+  FROM ECOMMERCE_DB.ANALYTICS.stg_orders o
+  JOIN ECOMMERCE_DB.ANALYTICS.stg_shipments s ON o.order_id = s.order_id
+  JOIN ECOMMERCE_DB.ANALYTICS.stg_customers c ON o.customer_id = c.customer_id
+)
+
+SELECT *,
+       CASE WHEN status = 'shipped' AND delivery_hours > 48 THEN 'DELAYED' ELSE status END AS final_status
+FROM base
+  );
+[0m17:00:17.290218 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 0.460 seconds
+[0m17:00:17.302188 [info ] [Thread-1  ]: 4 of 4 OK created sql view model ANALYTICS.order_status ........................ [[32mSUCCESS 1[0m in 0.50s]
+[0m17:00:17.305875 [debug] [Thread-1  ]: Finished running node model.dbt_ecommerce.order_status
+[0m17:00:17.311206 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:00:17.313205 [debug] [MainThread]: Connection 'list_ECOMMERCE_DB' was left open.
+[0m17:00:17.315974 [debug] [MainThread]: On list_ECOMMERCE_DB: Close
+[0m17:00:17.679335 [debug] [MainThread]: Connection 'model.dbt_ecommerce.order_status' was left open.
+[0m17:00:17.681222 [debug] [MainThread]: On model.dbt_ecommerce.order_status: Close
+[0m17:00:18.031164 [info ] [MainThread]: 
+[0m17:00:18.033415 [info ] [MainThread]: Finished running 4 view models in 0 hours 0 minutes and 5.46 seconds (5.46s).
+[0m17:00:18.037924 [debug] [MainThread]: Command end result
+[0m17:00:18.113900 [debug] [MainThread]: Wrote artifact WritableManifest to /home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/target/manifest.json
+[0m17:00:18.119229 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/target/semantic_manifest.json
+[0m17:00:18.133155 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/target/run_results.json
+[0m17:00:18.134469 [info ] [MainThread]: 
+[0m17:00:18.136471 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m17:00:18.138736 [info ] [MainThread]: 
+[0m17:00:18.140436 [info ] [MainThread]: Done. PASS=4 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=4
+[0m17:00:18.145093 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 8.45367, "process_in_blocks": "0", "process_kernel_time": 0.523807, "process_mem_max_rss": "138860", "process_out_blocks": "2072", "process_user_time": 4.897453}
+[0m17:00:18.147122 [debug] [MainThread]: Command `dbt run` succeeded at 17:00:18.146946 after 8.46 seconds
+[0m17:00:18.148663 [debug] [MainThread]: Flushing usage events
+[0m18:00:11.710873 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 18:00:11.877355 | 617a15b5-e661-42dc-8a0e-b2de4e4f0343 ==============================
+[0m18:00:11.877355 [info ] [MainThread]: Running with dbt=1.10.2
+[0m18:00:11.893658 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/atef/.dbt', 'debug': 'False', 'version_check': 'True', 'log_path': '/home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt run', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m18:00:13.319636 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m18:00:14.306668 [debug] [MainThread]: checksum: 1adc40777973ef30f45f80b3b6d04d5013c1edd53d96363881b3b199e612468b, vars: {}, profile: , target: , version: 1.10.2
+[0m18:00:14.557030 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m18:00:14.558111 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m18:00:14.816696 [debug] [MainThread]: Wrote artifact WritableManifest to /home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/target/manifest.json
+[0m18:00:14.836259 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/target/semantic_manifest.json
+[0m18:00:14.924007 [info ] [MainThread]: Found 4 models, 476 macros
+[0m18:00:14.936017 [info ] [MainThread]: 
+[0m18:00:14.940876 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m18:00:14.943059 [info ] [MainThread]: 
+[0m18:00:14.945688 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m18:00:14.957659 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ECOMMERCE_DB'
+[0m18:00:15.178950 [debug] [ThreadPool]: Using snowflake connection "list_ECOMMERCE_DB"
+[0m18:00:15.180028 [debug] [ThreadPool]: On list_ECOMMERCE_DB: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "connection_name": "list_ECOMMERCE_DB"} */
+show terse schemas in database ECOMMERCE_DB
+    limit 10000
+[0m18:00:15.181089 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:00:23.876931 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 8.696 seconds
+[0m18:00:23.883887 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ECOMMERCE_DB_ANALYTICS'
+[0m18:00:23.903061 [debug] [ThreadPool]: Using snowflake connection "list_ECOMMERCE_DB_ANALYTICS"
+[0m18:00:23.904080 [debug] [ThreadPool]: On list_ECOMMERCE_DB_ANALYTICS: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "connection_name": "list_ECOMMERCE_DB_ANALYTICS"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m18:00:23.904987 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:00:25.462627 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 1.557 seconds
+[0m18:00:25.473694 [debug] [ThreadPool]: Using snowflake connection "list_ECOMMERCE_DB_ANALYTICS"
+[0m18:00:25.475110 [debug] [ThreadPool]: On list_ECOMMERCE_DB_ANALYTICS: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "connection_name": "list_ECOMMERCE_DB_ANALYTICS"} */
+show objects in ECOMMERCE_DB.ANALYTICS
+    limit 10000
+    
+;
+[0m18:00:25.883355 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 0.407 seconds
+[0m18:00:25.887902 [debug] [ThreadPool]: Using snowflake connection "list_ECOMMERCE_DB_ANALYTICS"
+[0m18:00:25.889253 [debug] [ThreadPool]: On list_ECOMMERCE_DB_ANALYTICS: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "connection_name": "list_ECOMMERCE_DB_ANALYTICS"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m18:00:26.091992 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.201 seconds
+[0m18:00:26.274230 [debug] [Thread-1  ]: Began running node model.dbt_ecommerce.stg_customers
+[0m18:00:26.276003 [info ] [Thread-1  ]: 1 of 4 START sql view model ANALYTICS.stg_customers ............................ [RUN]
+[0m18:00:26.278152 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_ECOMMERCE_DB_ANALYTICS, now model.dbt_ecommerce.stg_customers)
+[0m18:00:26.279277 [debug] [Thread-1  ]: Began compiling node model.dbt_ecommerce.stg_customers
+[0m18:00:26.291202 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_ecommerce.stg_customers"
+[0m18:00:26.295952 [debug] [Thread-1  ]: Began executing node model.dbt_ecommerce.stg_customers
+[0m18:00:26.541828 [debug] [Thread-1  ]: Writing runtime sql for node "model.dbt_ecommerce.stg_customers"
+[0m18:00:26.545201 [debug] [Thread-1  ]: Using snowflake connection "model.dbt_ecommerce.stg_customers"
+[0m18:00:26.546764 [debug] [Thread-1  ]: On model.dbt_ecommerce.stg_customers: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "node_id": "model.dbt_ecommerce.stg_customers"} */
+create or replace   view ECOMMERCE_DB.ANALYTICS.stg_customers
+  
+   as (
+    SELECT *
+FROM raw.customers
+  );
+[0m18:00:26.957520 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 0.409 seconds
+[0m18:00:26.998965 [info ] [Thread-1  ]: 1 of 4 OK created sql view model ANALYTICS.stg_customers ....................... [[32mSUCCESS 1[0m in 0.72s]
+[0m18:00:27.003915 [debug] [Thread-1  ]: Finished running node model.dbt_ecommerce.stg_customers
+[0m18:00:27.005955 [debug] [Thread-1  ]: Began running node model.dbt_ecommerce.stg_orders
+[0m18:00:27.007713 [info ] [Thread-1  ]: 2 of 4 START sql view model ANALYTICS.stg_orders ............................... [RUN]
+[0m18:00:27.009766 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.dbt_ecommerce.stg_customers, now model.dbt_ecommerce.stg_orders)
+[0m18:00:27.010826 [debug] [Thread-1  ]: Began compiling node model.dbt_ecommerce.stg_orders
+[0m18:00:27.015073 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_ecommerce.stg_orders"
+[0m18:00:27.018044 [debug] [Thread-1  ]: Began executing node model.dbt_ecommerce.stg_orders
+[0m18:00:27.024117 [debug] [Thread-1  ]: Writing runtime sql for node "model.dbt_ecommerce.stg_orders"
+[0m18:00:27.027568 [debug] [Thread-1  ]: Using snowflake connection "model.dbt_ecommerce.stg_orders"
+[0m18:00:27.028542 [debug] [Thread-1  ]: On model.dbt_ecommerce.stg_orders: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "node_id": "model.dbt_ecommerce.stg_orders"} */
+create or replace   view ECOMMERCE_DB.ANALYTICS.stg_orders
+  
+   as (
+    SELECT *
+FROM raw.orders
+  );
+[0m18:00:27.415173 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 0.384 seconds
+[0m18:00:27.437201 [info ] [Thread-1  ]: 2 of 4 OK created sql view model ANALYTICS.stg_orders .......................... [[32mSUCCESS 1[0m in 0.43s]
+[0m18:00:27.449051 [debug] [Thread-1  ]: Finished running node model.dbt_ecommerce.stg_orders
+[0m18:00:27.452194 [debug] [Thread-1  ]: Began running node model.dbt_ecommerce.stg_shipments
+[0m18:00:27.457957 [info ] [Thread-1  ]: 3 of 4 START sql view model ANALYTICS.stg_shipments ............................ [RUN]
+[0m18:00:27.461030 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.dbt_ecommerce.stg_orders, now model.dbt_ecommerce.stg_shipments)
+[0m18:00:27.463875 [debug] [Thread-1  ]: Began compiling node model.dbt_ecommerce.stg_shipments
+[0m18:00:27.478037 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_ecommerce.stg_shipments"
+[0m18:00:27.482362 [debug] [Thread-1  ]: Began executing node model.dbt_ecommerce.stg_shipments
+[0m18:00:27.498019 [debug] [Thread-1  ]: Writing runtime sql for node "model.dbt_ecommerce.stg_shipments"
+[0m18:00:27.505733 [debug] [Thread-1  ]: Using snowflake connection "model.dbt_ecommerce.stg_shipments"
+[0m18:00:27.507023 [debug] [Thread-1  ]: On model.dbt_ecommerce.stg_shipments: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "node_id": "model.dbt_ecommerce.stg_shipments"} */
+create or replace   view ECOMMERCE_DB.ANALYTICS.stg_shipments
+  
+   as (
+    SELECT *
+FROM raw.shipments
+  );
+[0m18:00:27.896290 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 0.386 seconds
+[0m18:00:27.901935 [info ] [Thread-1  ]: 3 of 4 OK created sql view model ANALYTICS.stg_shipments ....................... [[32mSUCCESS 1[0m in 0.44s]
+[0m18:00:27.904768 [debug] [Thread-1  ]: Finished running node model.dbt_ecommerce.stg_shipments
+[0m18:00:27.907757 [debug] [Thread-1  ]: Began running node model.dbt_ecommerce.order_status
+[0m18:00:27.908959 [info ] [Thread-1  ]: 4 of 4 START sql view model ANALYTICS.order_status ............................. [RUN]
+[0m18:00:27.911290 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.dbt_ecommerce.stg_shipments, now model.dbt_ecommerce.order_status)
+[0m18:00:27.912973 [debug] [Thread-1  ]: Began compiling node model.dbt_ecommerce.order_status
+[0m18:00:27.919343 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_ecommerce.order_status"
+[0m18:00:27.922207 [debug] [Thread-1  ]: Began executing node model.dbt_ecommerce.order_status
+[0m18:00:27.930987 [debug] [Thread-1  ]: Writing runtime sql for node "model.dbt_ecommerce.order_status"
+[0m18:00:27.935183 [debug] [Thread-1  ]: Using snowflake connection "model.dbt_ecommerce.order_status"
+[0m18:00:27.936707 [debug] [Thread-1  ]: On model.dbt_ecommerce.order_status: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "node_id": "model.dbt_ecommerce.order_status"} */
+create or replace   view ECOMMERCE_DB.ANALYTICS.order_status
+  
+   as (
+    WITH base AS (
+  SELECT o.order_id, c.name AS customer_name, o.order_date, s.status,
+         s.shipped_at, s.delivered_at,
+         DATEDIFF('hour', s.shipped_at, s.delivered_at) AS delivery_hours
+  FROM ECOMMERCE_DB.ANALYTICS.stg_orders o
+  JOIN ECOMMERCE_DB.ANALYTICS.stg_shipments s ON o.order_id = s.order_id
+  JOIN ECOMMERCE_DB.ANALYTICS.stg_customers c ON o.customer_id = c.customer_id
+)
+
+SELECT *,
+       CASE WHEN status = 'shipped' AND delivery_hours > 48 THEN 'DELAYED' ELSE status END AS final_status
+FROM base
+  );
+[0m18:00:28.478813 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 0.541 seconds
+[0m18:00:28.483890 [info ] [Thread-1  ]: 4 of 4 OK created sql view model ANALYTICS.order_status ........................ [[32mSUCCESS 1[0m in 0.57s]
+[0m18:00:28.485935 [debug] [Thread-1  ]: Finished running node model.dbt_ecommerce.order_status
+[0m18:00:28.489727 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:00:28.492124 [debug] [MainThread]: Connection 'list_ECOMMERCE_DB' was left open.
+[0m18:00:28.492966 [debug] [MainThread]: On list_ECOMMERCE_DB: Close
+[0m18:00:28.892459 [debug] [MainThread]: Connection 'model.dbt_ecommerce.order_status' was left open.
+[0m18:00:28.895471 [debug] [MainThread]: On model.dbt_ecommerce.order_status: Close
+[0m18:00:29.335825 [info ] [MainThread]: 
+[0m18:00:29.339551 [info ] [MainThread]: Finished running 4 view models in 0 hours 0 minutes and 14.39 seconds (14.39s).
+[0m18:00:29.343592 [debug] [MainThread]: Command end result
+[0m18:00:29.396586 [debug] [MainThread]: Wrote artifact WritableManifest to /home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/target/manifest.json
+[0m18:00:29.402212 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/target/semantic_manifest.json
+[0m18:00:29.413261 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/target/run_results.json
+[0m18:00:29.414925 [info ] [MainThread]: 
+[0m18:00:29.416968 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m18:00:29.418625 [info ] [MainThread]: 
+[0m18:00:29.420019 [info ] [MainThread]: Done. PASS=4 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=4
+[0m18:00:29.422967 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 17.872686, "process_in_blocks": "0", "process_kernel_time": 0.596357, "process_mem_max_rss": "139004", "process_out_blocks": "2072", "process_user_time": 5.333406}
+[0m18:00:29.424910 [debug] [MainThread]: Command `dbt run` succeeded at 18:00:29.424775 after 17.88 seconds
+[0m18:00:29.426008 [debug] [MainThread]: Flushing usage events
+[0m21:31:14.142934 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 21:31:14.161838 | bfe4cab7-d551-43c4-99fc-a83ef414adc9 ==============================
+[0m21:31:14.161838 [info ] [MainThread]: Running with dbt=1.10.2
+[0m21:31:14.163245 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/atef/.dbt', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt run', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m21:31:14.877819 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m21:31:15.319997 [debug] [MainThread]: checksum: 1adc40777973ef30f45f80b3b6d04d5013c1edd53d96363881b3b199e612468b, vars: {}, profile: , target: , version: 1.10.2
+[0m21:31:15.560183 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m21:31:15.560832 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m21:31:15.680261 [debug] [MainThread]: Wrote artifact WritableManifest to /home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/target/manifest.json
+[0m21:31:15.683115 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/target/semantic_manifest.json
+[0m21:31:15.713748 [info ] [MainThread]: Found 4 models, 476 macros
+[0m21:31:15.716854 [info ] [MainThread]: 
+[0m21:31:15.717756 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m21:31:15.718256 [info ] [MainThread]: 
+[0m21:31:15.719532 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m21:31:15.727068 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ECOMMERCE_DB'
+[0m21:31:15.983277 [debug] [ThreadPool]: Using snowflake connection "list_ECOMMERCE_DB"
+[0m21:31:15.984069 [debug] [ThreadPool]: On list_ECOMMERCE_DB: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "connection_name": "list_ECOMMERCE_DB"} */
+show terse schemas in database ECOMMERCE_DB
+    limit 10000
+[0m21:31:15.984666 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:31:18.274745 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 2.290 seconds
+[0m21:31:18.282811 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ECOMMERCE_DB_ANALYTICS'
+[0m21:31:18.305857 [debug] [ThreadPool]: Using snowflake connection "list_ECOMMERCE_DB_ANALYTICS"
+[0m21:31:18.306617 [debug] [ThreadPool]: On list_ECOMMERCE_DB_ANALYTICS: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "connection_name": "list_ECOMMERCE_DB_ANALYTICS"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m21:31:18.307089 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:31:19.081859 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.775 seconds
+[0m21:31:19.086884 [debug] [ThreadPool]: Using snowflake connection "list_ECOMMERCE_DB_ANALYTICS"
+[0m21:31:19.087377 [debug] [ThreadPool]: On list_ECOMMERCE_DB_ANALYTICS: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "connection_name": "list_ECOMMERCE_DB_ANALYTICS"} */
+show objects in ECOMMERCE_DB.ANALYTICS
+    limit 10000
+    
+;
+[0m21:31:19.323555 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 0.236 seconds
+[0m21:31:19.326102 [debug] [ThreadPool]: Using snowflake connection "list_ECOMMERCE_DB_ANALYTICS"
+[0m21:31:19.326708 [debug] [ThreadPool]: On list_ECOMMERCE_DB_ANALYTICS: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "connection_name": "list_ECOMMERCE_DB_ANALYTICS"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m21:31:19.508743 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.181 seconds
+[0m21:31:19.517278 [debug] [Thread-1  ]: Began running node model.dbt_ecommerce.stg_customers
+[0m21:31:19.518841 [info ] [Thread-1  ]: 1 of 4 START sql view model ANALYTICS.stg_customers ............................ [RUN]
+[0m21:31:19.521871 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_ECOMMERCE_DB_ANALYTICS, now model.dbt_ecommerce.stg_customers)
+[0m21:31:19.522782 [debug] [Thread-1  ]: Began compiling node model.dbt_ecommerce.stg_customers
+[0m21:31:19.603752 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_ecommerce.stg_customers"
+[0m21:31:19.604978 [debug] [Thread-1  ]: Began executing node model.dbt_ecommerce.stg_customers
+[0m21:31:19.637626 [debug] [Thread-1  ]: Writing runtime sql for node "model.dbt_ecommerce.stg_customers"
+[0m21:31:19.639068 [debug] [Thread-1  ]: Using snowflake connection "model.dbt_ecommerce.stg_customers"
+[0m21:31:19.639730 [debug] [Thread-1  ]: On model.dbt_ecommerce.stg_customers: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "node_id": "model.dbt_ecommerce.stg_customers"} */
+create or replace   view ECOMMERCE_DB.ANALYTICS.stg_customers
+  
+   as (
+    SELECT *
+FROM raw.customers
+  );
+[0m21:31:19.998737 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 0.358 seconds
+[0m21:31:20.057120 [info ] [Thread-1  ]: 1 of 4 OK created sql view model ANALYTICS.stg_customers ....................... [[32mSUCCESS 1[0m in 0.53s]
+[0m21:31:20.058804 [debug] [Thread-1  ]: Finished running node model.dbt_ecommerce.stg_customers
+[0m21:31:20.059739 [debug] [Thread-1  ]: Began running node model.dbt_ecommerce.stg_orders
+[0m21:31:20.060678 [info ] [Thread-1  ]: 2 of 4 START sql view model ANALYTICS.stg_orders ............................... [RUN]
+[0m21:31:20.061735 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.dbt_ecommerce.stg_customers, now model.dbt_ecommerce.stg_orders)
+[0m21:31:20.062491 [debug] [Thread-1  ]: Began compiling node model.dbt_ecommerce.stg_orders
+[0m21:31:20.067476 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_ecommerce.stg_orders"
+[0m21:31:20.069190 [debug] [Thread-1  ]: Began executing node model.dbt_ecommerce.stg_orders
+[0m21:31:20.074606 [debug] [Thread-1  ]: Writing runtime sql for node "model.dbt_ecommerce.stg_orders"
+[0m21:31:20.076075 [debug] [Thread-1  ]: Using snowflake connection "model.dbt_ecommerce.stg_orders"
+[0m21:31:20.076770 [debug] [Thread-1  ]: On model.dbt_ecommerce.stg_orders: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "node_id": "model.dbt_ecommerce.stg_orders"} */
+create or replace   view ECOMMERCE_DB.ANALYTICS.stg_orders
+  
+   as (
+    SELECT *
+FROM raw.orders
+  );
+[0m21:31:20.444780 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 0.366 seconds
+[0m21:31:20.460164 [info ] [Thread-1  ]: 2 of 4 OK created sql view model ANALYTICS.stg_orders .......................... [[32mSUCCESS 1[0m in 0.40s]
+[0m21:31:20.462389 [debug] [Thread-1  ]: Finished running node model.dbt_ecommerce.stg_orders
+[0m21:31:20.463857 [debug] [Thread-1  ]: Began running node model.dbt_ecommerce.stg_shipments
+[0m21:31:20.465214 [info ] [Thread-1  ]: 3 of 4 START sql view model ANALYTICS.stg_shipments ............................ [RUN]
+[0m21:31:20.468939 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.dbt_ecommerce.stg_orders, now model.dbt_ecommerce.stg_shipments)
+[0m21:31:20.469942 [debug] [Thread-1  ]: Began compiling node model.dbt_ecommerce.stg_shipments
+[0m21:31:20.474986 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_ecommerce.stg_shipments"
+[0m21:31:20.477146 [debug] [Thread-1  ]: Began executing node model.dbt_ecommerce.stg_shipments
+[0m21:31:20.486200 [debug] [Thread-1  ]: Writing runtime sql for node "model.dbt_ecommerce.stg_shipments"
+[0m21:31:20.489082 [debug] [Thread-1  ]: Using snowflake connection "model.dbt_ecommerce.stg_shipments"
+[0m21:31:20.490297 [debug] [Thread-1  ]: On model.dbt_ecommerce.stg_shipments: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "node_id": "model.dbt_ecommerce.stg_shipments"} */
+create or replace   view ECOMMERCE_DB.ANALYTICS.stg_shipments
+  
+   as (
+    SELECT *
+FROM raw.shipments
+  );
+[0m21:31:20.831541 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 0.340 seconds
+[0m21:31:20.835179 [info ] [Thread-1  ]: 3 of 4 OK created sql view model ANALYTICS.stg_shipments ....................... [[32mSUCCESS 1[0m in 0.37s]
+[0m21:31:20.836298 [debug] [Thread-1  ]: Finished running node model.dbt_ecommerce.stg_shipments
+[0m21:31:20.837267 [debug] [Thread-1  ]: Began running node model.dbt_ecommerce.order_status
+[0m21:31:20.837980 [info ] [Thread-1  ]: 4 of 4 START sql view model ANALYTICS.order_status ............................. [RUN]
+[0m21:31:20.838763 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.dbt_ecommerce.stg_shipments, now model.dbt_ecommerce.order_status)
+[0m21:31:20.839250 [debug] [Thread-1  ]: Began compiling node model.dbt_ecommerce.order_status
+[0m21:31:20.844365 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_ecommerce.order_status"
+[0m21:31:20.845748 [debug] [Thread-1  ]: Began executing node model.dbt_ecommerce.order_status
+[0m21:31:20.850945 [debug] [Thread-1  ]: Writing runtime sql for node "model.dbt_ecommerce.order_status"
+[0m21:31:20.853167 [debug] [Thread-1  ]: Using snowflake connection "model.dbt_ecommerce.order_status"
+[0m21:31:20.855568 [debug] [Thread-1  ]: On model.dbt_ecommerce.order_status: /* {"app": "dbt", "dbt_version": "1.10.2", "profile_name": "ecommerce", "target_name": "dev", "node_id": "model.dbt_ecommerce.order_status"} */
+create or replace   view ECOMMERCE_DB.ANALYTICS.order_status
+  
+   as (
+    WITH base AS (
+  SELECT o.order_id, c.name AS customer_name, o.order_date, s.status,
+         s.shipped_at, s.delivered_at,
+         DATEDIFF('hour', s.shipped_at, s.delivered_at) AS delivery_hours
+  FROM ECOMMERCE_DB.ANALYTICS.stg_orders o
+  JOIN ECOMMERCE_DB.ANALYTICS.stg_shipments s ON o.order_id = s.order_id
+  JOIN ECOMMERCE_DB.ANALYTICS.stg_customers c ON o.customer_id = c.customer_id
+)
+
+SELECT *,
+       CASE WHEN status = 'shipped' AND delivery_hours > 48 THEN 'DELAYED' ELSE status END AS final_status
+FROM base
+  );
+[0m21:31:21.369933 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 0.513 seconds
+[0m21:31:21.374954 [info ] [Thread-1  ]: 4 of 4 OK created sql view model ANALYTICS.order_status ........................ [[32mSUCCESS 1[0m in 0.54s]
+[0m21:31:21.376171 [debug] [Thread-1  ]: Finished running node model.dbt_ecommerce.order_status
+[0m21:31:21.377701 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m21:31:21.378113 [debug] [MainThread]: Connection 'list_ECOMMERCE_DB' was left open.
+[0m21:31:21.378659 [debug] [MainThread]: On list_ECOMMERCE_DB: Close
+[0m21:31:21.724394 [debug] [MainThread]: Connection 'model.dbt_ecommerce.order_status' was left open.
+[0m21:31:21.727057 [debug] [MainThread]: On model.dbt_ecommerce.order_status: Close
+[0m21:31:22.076102 [info ] [MainThread]: 
+[0m21:31:22.080130 [info ] [MainThread]: Finished running 4 view models in 0 hours 0 minutes and 6.36 seconds (6.36s).
+[0m21:31:22.087191 [debug] [MainThread]: Command end result
+[0m21:31:22.151446 [debug] [MainThread]: Wrote artifact WritableManifest to /home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/target/manifest.json
+[0m21:31:22.156897 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/target/semantic_manifest.json
+[0m21:31:22.171278 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/target/run_results.json
+[0m21:31:22.173078 [info ] [MainThread]: 
+[0m21:31:22.174040 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m21:31:22.175101 [info ] [MainThread]: 
+[0m21:31:22.175774 [info ] [MainThread]: Done. PASS=4 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=4
+[0m21:31:22.202055 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 8.318467, "process_in_blocks": "11576", "process_kernel_time": 0.358909, "process_mem_max_rss": "145440", "process_out_blocks": "5904", "process_user_time": 3.457568}
+[0m21:31:22.203640 [debug] [MainThread]: Command `dbt run` succeeded at 21:31:22.203468 after 8.32 seconds
+[0m21:31:22.204195 [debug] [MainThread]: Flushing usage events
+[0m00:24:52.652182 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 00:24:52.663757 | bacab357-71c3-44e7-babd-f621162438fb ==============================
+[0m00:24:52.663757 [info ] [MainThread]: Running with dbt=1.10.2
+[0m00:24:52.665858 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/logs', 'debug': 'False', 'profiles_dir': '/home/atef/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'log_format': 'default', 'invocation_command': 'dbt run', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m00:24:53.579100 [error] [MainThread]: Encountered an error:
+No module named 'jsonschema._keywords'
+[0m00:24:53.602963 [error] [MainThread]: Traceback (most recent call last):
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 161, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 111, in wrapper
+    return func(*args, **kwargs)
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 254, in wrapper
+    return func(*args, **kwargs)
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 272, in wrapper
+    project = load_project(
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/config/runtime.py", line 58, in load_project
+    project = Project.from_project_root(
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/config/project.py", line 768, in from_project_root
+    partial = PartialProject.from_project_root(
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/config/project.py", line 579, in from_project_root
+    project_dict = load_raw_project(project_root, validate=validate)
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/config/project.py", line 209, in load_raw_project
+    from dbt.jsonschemas import jsonschema_validate, project_schema
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/jsonschemas.py", line 10, in <module>
+    from jsonschema._keywords import type as type_rule
+ModuleNotFoundError: No module named 'jsonschema._keywords'
+
+[0m00:24:53.607504 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 1.0379629, "process_in_blocks": "22528", "process_kernel_time": 0.303796, "process_mem_max_rss": "157628", "process_out_blocks": "16", "process_user_time": 2.503142}
+[0m00:24:53.609645 [debug] [MainThread]: Command `dbt run` failed at 00:24:53.609443 after 1.04 seconds
+[0m00:24:53.611124 [debug] [MainThread]: Flushing usage events
+[0m01:44:31.067359 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 01:44:31.076320 | 07fd087e-5cac-49bf-b140-87d7e985f101 ==============================
+[0m01:44:31.076320 [info ] [MainThread]: Running with dbt=1.10.2
+[0m01:44:31.078224 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': '/home/atef/.dbt', 'log_path': '/home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True'}
+[0m01:44:31.786936 [error] [MainThread]: Encountered an error:
+No module named 'jsonschema._keywords'
+[0m01:44:31.789097 [error] [MainThread]: Traceback (most recent call last):
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 161, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 111, in wrapper
+    return func(*args, **kwargs)
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 254, in wrapper
+    return func(*args, **kwargs)
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 272, in wrapper
+    project = load_project(
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/config/runtime.py", line 58, in load_project
+    project = Project.from_project_root(
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/config/project.py", line 768, in from_project_root
+    partial = PartialProject.from_project_root(
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/config/project.py", line 579, in from_project_root
+    project_dict = load_raw_project(project_root, validate=validate)
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/config/project.py", line 209, in load_raw_project
+    from dbt.jsonschemas import jsonschema_validate, project_schema
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/jsonschemas.py", line 10, in <module>
+    from jsonschema._keywords import type as type_rule
+ModuleNotFoundError: No module named 'jsonschema._keywords'
+
+[0m01:44:31.792690 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.79011405, "process_in_blocks": "0", "process_kernel_time": 0.209447, "process_mem_max_rss": "157888", "process_out_blocks": "16", "process_user_time": 1.957191}
+[0m01:44:31.793388 [debug] [MainThread]: Command `dbt run` failed at 01:44:31.793271 after 0.79 seconds
+[0m01:44:31.794900 [debug] [MainThread]: Flushing usage events
+[0m01:49:44.789037 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 01:49:44.797637 | 057aebdb-7024-4a99-8069-e5a3d42a8566 ==============================
+[0m01:49:44.797637 [info ] [MainThread]: Running with dbt=1.10.2
+[0m01:49:44.799005 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/atef/.dbt', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt run', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True'}
+[0m01:49:45.618289 [error] [MainThread]: Encountered an error:
+No module named 'jsonschema._keywords'
+[0m01:49:45.620073 [error] [MainThread]: Traceback (most recent call last):
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 161, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 111, in wrapper
+    return func(*args, **kwargs)
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 254, in wrapper
+    return func(*args, **kwargs)
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 272, in wrapper
+    project = load_project(
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/config/runtime.py", line 58, in load_project
+    project = Project.from_project_root(
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/config/project.py", line 768, in from_project_root
+    partial = PartialProject.from_project_root(
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/config/project.py", line 579, in from_project_root
+    project_dict = load_raw_project(project_root, validate=validate)
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/config/project.py", line 209, in load_raw_project
+    from dbt.jsonschemas import jsonschema_validate, project_schema
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/jsonschemas.py", line 10, in <module>
+    from jsonschema._keywords import type as type_rule
+ModuleNotFoundError: No module named 'jsonschema._keywords'
+
+[0m01:49:45.622795 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.89926434, "process_in_blocks": "0", "process_kernel_time": 0.188472, "process_mem_max_rss": "157884", "process_out_blocks": "8", "process_user_time": 2.114703}
+[0m01:49:45.623622 [debug] [MainThread]: Command `dbt run` failed at 01:49:45.623381 after 0.90 seconds
+[0m01:49:45.624094 [debug] [MainThread]: Flushing usage events
+[0m01:56:32.884721 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 01:56:32.894020 | e893cbc2-f7d8-4c7b-b8a9-1f3bcf5233ae ==============================
+[0m01:56:32.894020 [info ] [MainThread]: Running with dbt=1.10.2
+[0m01:56:32.895498 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/atef/.dbt', 'version_check': 'True', 'debug': 'False', 'log_path': '/home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'invocation_command': 'dbt run', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True'}
+[0m01:56:33.574229 [error] [MainThread]: Encountered an error:
+No module named 'jsonschema._keywords'
+[0m01:56:33.576071 [error] [MainThread]: Traceback (most recent call last):
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 161, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 111, in wrapper
+    return func(*args, **kwargs)
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 254, in wrapper
+    return func(*args, **kwargs)
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 272, in wrapper
+    project = load_project(
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/config/runtime.py", line 58, in load_project
+    project = Project.from_project_root(
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/config/project.py", line 768, in from_project_root
+    partial = PartialProject.from_project_root(
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/config/project.py", line 579, in from_project_root
+    project_dict = load_raw_project(project_root, validate=validate)
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/config/project.py", line 209, in load_raw_project
+    from dbt.jsonschemas import jsonschema_validate, project_schema
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/jsonschemas.py", line 10, in <module>
+    from jsonschema._keywords import type as type_rule
+ModuleNotFoundError: No module named 'jsonschema._keywords'
+
+[0m01:56:33.578639 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.7899783, "process_in_blocks": "0", "process_kernel_time": 0.195089, "process_mem_max_rss": "157756", "process_out_blocks": "16", "process_user_time": 2.196652}
+[0m01:56:33.579323 [debug] [MainThread]: Command `dbt run` failed at 01:56:33.579212 after 0.79 seconds
+[0m01:56:33.579876 [debug] [MainThread]: Flushing usage events
+[0m02:00:25.567688 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 02:00:25.578293 | 6751634f-282c-4444-a124-fc495e44a2ba ==============================
+[0m02:00:25.578293 [info ] [MainThread]: Running with dbt=1.10.2
+[0m02:00:25.580203 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/atef/.dbt', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': '/home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt run', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m02:00:26.281045 [error] [MainThread]: Encountered an error:
+No module named 'jsonschema._keywords'
+[0m02:00:26.282850 [error] [MainThread]: Traceback (most recent call last):
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 161, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 111, in wrapper
+    return func(*args, **kwargs)
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 254, in wrapper
+    return func(*args, **kwargs)
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 272, in wrapper
+    project = load_project(
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/config/runtime.py", line 58, in load_project
+    project = Project.from_project_root(
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/config/project.py", line 768, in from_project_root
+    partial = PartialProject.from_project_root(
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/config/project.py", line 579, in from_project_root
+    project_dict = load_raw_project(project_root, validate=validate)
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/config/project.py", line 209, in load_raw_project
+    from dbt.jsonschemas import jsonschema_validate, project_schema
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/jsonschemas.py", line 10, in <module>
+    from jsonschema._keywords import type as type_rule
+ModuleNotFoundError: No module named 'jsonschema._keywords'
+
+[0m02:00:26.285295 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.8059162, "process_in_blocks": "0", "process_kernel_time": 0.211734, "process_mem_max_rss": "157760", "process_out_blocks": "16", "process_user_time": 2.192386}
+[0m02:00:26.286132 [debug] [MainThread]: Command `dbt run` failed at 02:00:26.286020 after 0.81 seconds
+[0m02:00:26.286750 [debug] [MainThread]: Flushing usage events
+[0m02:00:32.412555 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 02:00:32.424811 | c563d150-5c5d-425f-ba85-80071def68bd ==============================
+[0m02:00:32.424811 [info ] [MainThread]: Running with dbt=1.10.2
+[0m02:00:32.427165 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': '/home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/logs', 'profiles_dir': '/home/atef/.dbt', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt run', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m02:00:33.143699 [error] [MainThread]: Encountered an error:
+No module named 'jsonschema._keywords'
+[0m02:00:33.145413 [error] [MainThread]: Traceback (most recent call last):
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 161, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 111, in wrapper
+    return func(*args, **kwargs)
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 254, in wrapper
+    return func(*args, **kwargs)
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 272, in wrapper
+    project = load_project(
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/config/runtime.py", line 58, in load_project
+    project = Project.from_project_root(
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/config/project.py", line 768, in from_project_root
+    partial = PartialProject.from_project_root(
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/config/project.py", line 579, in from_project_root
+    project_dict = load_raw_project(project_root, validate=validate)
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/config/project.py", line 209, in load_raw_project
+    from dbt.jsonschemas import jsonschema_validate, project_schema
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/jsonschemas.py", line 10, in <module>
+    from jsonschema._keywords import type as type_rule
+ModuleNotFoundError: No module named 'jsonschema._keywords'
+
+[0m02:00:33.147896 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.84067315, "process_in_blocks": "0", "process_kernel_time": 0.248217, "process_mem_max_rss": "157884", "process_out_blocks": "8", "process_user_time": 2.568014}
+[0m02:00:33.148660 [debug] [MainThread]: Command `dbt run` failed at 02:00:33.148529 after 0.84 seconds
+[0m02:00:33.149122 [debug] [MainThread]: Flushing usage events
+[0m02:03:18.123756 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 02:03:18.137593 | 5c8eb07c-a720-4397-bf0c-f99ab1b5de70 ==============================
+[0m02:03:18.137593 [info ] [MainThread]: Running with dbt=1.10.2
+[0m02:03:18.139963 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/atef/.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt run', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True'}
+[0m02:03:19.684613 [error] [MainThread]: Encountered an error:
+No module named 'jsonschema._keywords'
+[0m02:03:19.691125 [error] [MainThread]: Traceback (most recent call last):
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 161, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 111, in wrapper
+    return func(*args, **kwargs)
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 254, in wrapper
+    return func(*args, **kwargs)
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 272, in wrapper
+    project = load_project(
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/config/runtime.py", line 58, in load_project
+    project = Project.from_project_root(
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/config/project.py", line 768, in from_project_root
+    partial = PartialProject.from_project_root(
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/config/project.py", line 579, in from_project_root
+    project_dict = load_raw_project(project_root, validate=validate)
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/config/project.py", line 209, in load_raw_project
+    from dbt.jsonschemas import jsonschema_validate, project_schema
+  File "/home/atef/.local/lib/python3.9/site-packages/dbt/jsonschemas.py", line 10, in <module>
+    from jsonschema._keywords import type as type_rule
+ModuleNotFoundError: No module named 'jsonschema._keywords'
+
+[0m02:03:19.697965 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 1.713597, "process_in_blocks": "0", "process_kernel_time": 0.443306, "process_mem_max_rss": "157632", "process_out_blocks": "8", "process_user_time": 4.362666}
+[0m02:03:19.700159 [debug] [MainThread]: Command `dbt run` failed at 02:03:19.699851 after 1.72 seconds
+[0m02:03:19.702500 [debug] [MainThread]: Flushing usage events
+[0m02:16:50.481131 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 02:16:50.490971 | ae5cb312-7822-4c51-a48a-ecff77ef1c60 ==============================
+[0m02:16:50.490971 [info ] [MainThread]: Running with dbt=1.5.7
+[0m02:16:50.493091 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': '/home/atef/.dbt', 'log_path': '/home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'send_anonymous_usage_stats': 'True'}
+[0m02:16:50.873155 [info ] [MainThread]: Registered adapter: snowflake=1.5.7
+[0m02:16:50.887664 [debug] [MainThread]: checksum: 44b8b5a9d2eaf7949279d1035184f95e7b9fe5352959954be3a97da5bf024fba, vars: {}, profile: , target: , version: 1.5.7
+[0m02:16:50.899617 [info ] [MainThread]: Unable to do partial parsing because of a version mismatch
+[0m02:16:51.278808 [error] [MainThread]: Encountered an error:
+Compilation Error
+  dbt found two macros named "materialization_table_default" in the project
+  "dbt".
+   To fix this error, rename or remove one of the following macros:
+      - macros/materializations/models/table/table.sql
+      - macros/materializations/models/table.sql
+[0m02:16:51.279987 [debug] [MainThread]: Command `dbt run` failed at 02:16:51.279869 after 0.81 seconds
+[0m02:16:51.280354 [debug] [MainThread]: Flushing usage events
+[0m02:20:00.807061 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 02:20:00.816138 | 1a8923d1-2216-4bfc-9b2f-5646f56e8aa8 ==============================
+[0m02:20:00.816138 [info ] [MainThread]: Running with dbt=1.5.7
+[0m02:20:00.817659 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/atef/.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': '/home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'send_anonymous_usage_stats': 'True'}
+[0m02:20:01.156363 [info ] [MainThread]: Registered adapter: snowflake=1.5.7
+[0m02:20:01.169962 [debug] [MainThread]: checksum: 44b8b5a9d2eaf7949279d1035184f95e7b9fe5352959954be3a97da5bf024fba, vars: {}, profile: , target: , version: 1.5.7
+[0m02:20:01.184397 [info ] [MainThread]: Unable to do partial parsing because of a version mismatch
+[0m02:20:01.523055 [error] [MainThread]: Encountered an error:
+Compilation Error
+  dbt found two macros named "materialization_table_default" in the project
+  "dbt".
+   To fix this error, rename or remove one of the following macros:
+      - macros/materializations/models/table/table.sql
+      - macros/materializations/models/table.sql
+[0m02:20:01.524584 [debug] [MainThread]: Command `dbt run` failed at 02:20:01.524407 after 0.73 seconds
+[0m02:20:01.525034 [debug] [MainThread]: Flushing usage events
+[0m02:21:50.268113 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 02:21:50.277145 | 2570d1d5-5406-43a0-ae2d-95ead352b126 ==============================
+[0m02:21:50.277145 [info ] [MainThread]: Running with dbt=1.5.7
+[0m02:21:50.278733 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': '/home/atef/.dbt', 'log_path': '/home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'send_anonymous_usage_stats': 'True'}
+[0m02:21:50.612369 [info ] [MainThread]: Registered adapter: snowflake=1.5.7
+[0m02:21:50.627697 [debug] [MainThread]: checksum: 44b8b5a9d2eaf7949279d1035184f95e7b9fe5352959954be3a97da5bf024fba, vars: {}, profile: , target: , version: 1.5.7
+[0m02:21:50.629043 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m02:21:50.987098 [error] [MainThread]: Encountered an error:
+Compilation Error
+  dbt found two macros named "materialization_table_default" in the project
+  "dbt".
+   To fix this error, rename or remove one of the following macros:
+      - macros/materializations/models/table/table.sql
+      - macros/materializations/models/table.sql
+[0m02:21:50.988688 [debug] [MainThread]: Command `dbt run` failed at 02:21:50.988396 after 0.73 seconds
+[0m02:21:50.989188 [debug] [MainThread]: Flushing usage events
+[0m02:22:19.631758 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 02:22:19.641027 | 4406e3ea-a172-42b0-b7b7-5c13d198e9d2 ==============================
+[0m02:22:19.641027 [info ] [MainThread]: Running with dbt=1.5.7
+[0m02:22:19.642604 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': '/home/atef/.dbt', 'log_path': '/home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce/logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'send_anonymous_usage_stats': 'True'}
+[0m02:22:19.987651 [info ] [MainThread]: Registered adapter: snowflake=1.5.7
+[0m02:22:20.003909 [debug] [MainThread]: checksum: 44b8b5a9d2eaf7949279d1035184f95e7b9fe5352959954be3a97da5bf024fba, vars: {}, profile: , target: , version: 1.5.7
+[0m02:22:20.007587 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m02:22:20.343861 [error] [MainThread]: Encountered an error:
+Compilation Error
+  dbt found two macros named "materialization_table_default" in the project
+  "dbt".
+   To fix this error, rename or remove one of the following macros:
+      - macros/materializations/models/table/table.sql
+      - macros/materializations/models/table.sql
+[0m02:22:20.345357 [debug] [MainThread]: Command `dbt run` failed at 02:22:20.345138 after 0.72 seconds
+[0m02:22:20.345983 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2025-06-27 23:27:01.883297 | 4582a123-340f-486c-ab1c-11c0255e3bca ==============================
+[0m23:27:01.883297 [info ] [MainThread]: Running with dbt=1.4.9
+[0m23:27:01.884116 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/home/atef/.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'config_dir': False, 'which': 'debug', 'indirect_selection': 'eager'}
+[0m23:27:01.884340 [debug] [MainThread]: Tracking: do not track
+[0m23:27:02.227066 [debug] [MainThread]: Executing "git --help"
+[0m23:27:02.235761 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m23:27:02.236316 [debug] [MainThread]: STDERR: "b''"
+[0m23:27:02.250755 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m23:27:02.252077 [debug] [MainThread]: Using snowflake connection "debug"
+[0m23:27:02.253768 [debug] [MainThread]: On debug: select 1 as id
+[0m23:27:02.255032 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m23:27:06.940673 [debug] [MainThread]: SQL status: SUCCESS 1 in 5 seconds
+[0m23:27:06.942227 [debug] [MainThread]: On debug: Close
+[0m23:27:07.368680 [debug] [MainThread]: Flushing usage events
+[0m23:27:07.372476 [debug] [MainThread]: Connection 'debug' was properly closed.
+
+
+============================== 2025-06-27 23:28:34.012445 | 3e28ff89-d1a2-4404-b1cb-f2771cbe290e ==============================
+[0m23:28:34.012445 [info ] [MainThread]: Running with dbt=1.4.9
+[0m23:28:34.013610 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/home/atef/.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'config_dir': False, 'which': 'debug', 'indirect_selection': 'eager'}
+[0m23:28:34.013871 [debug] [MainThread]: Tracking: do not track
+[0m23:28:34.420722 [debug] [MainThread]: Executing "git --help"
+[0m23:28:34.428968 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m23:28:34.429722 [debug] [MainThread]: STDERR: "b''"
+[0m23:28:34.442297 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m23:28:34.445248 [debug] [MainThread]: Using snowflake connection "debug"
+[0m23:28:34.446701 [debug] [MainThread]: On debug: select 1 as id
+[0m23:28:34.447092 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m23:28:35.581620 [debug] [MainThread]: SQL status: SUCCESS 1 in 1 seconds
+[0m23:28:35.583145 [debug] [MainThread]: On debug: Close
+[0m23:28:35.932307 [debug] [MainThread]: Flushing usage events
+[0m23:28:35.933187 [debug] [MainThread]: Connection 'debug' was properly closed.
+
+
+============================== 2025-06-27 23:28:43.188046 | c76b936c-72ff-4cec-b9f3-0a5c5779df14 ==============================
+[0m23:28:43.188046 [info ] [MainThread]: Running with dbt=1.4.9
+[0m23:28:43.191324 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/home/atef/.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m23:28:43.191710 [debug] [MainThread]: Tracking: do not track
+[0m23:28:43.222390 [debug] [MainThread]: checksum: 07ac7676dbf91b944d5fe41bac352fb2dda62b33015cbd1e52faa2a2c71f6d73, vars: {}, profile: None, target: None, version: 1.4.9
+[0m23:28:43.224123 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m23:28:43.960180 [debug] [MainThread]: 1699: static parser successfully parsed marts/order_status.sql
+[0m23:28:43.973832 [debug] [MainThread]: 1699: static parser successfully parsed staging/stg_customers.sql
+[0m23:28:43.977417 [debug] [MainThread]: 1699: static parser successfully parsed staging/stg_orders.sql
+[0m23:28:43.981210 [debug] [MainThread]: 1699: static parser successfully parsed staging/stg_shipments.sql
+[0m23:28:44.081043 [info ] [MainThread]: Found 4 models, 0 tests, 0 snapshots, 0 analyses, 306 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+[0m23:28:44.082709 [info ] [MainThread]: 
+[0m23:28:44.084380 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m23:28:44.085630 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ECOMMERCE_DB'
+[0m23:28:44.108097 [debug] [ThreadPool]: Using snowflake connection "list_ECOMMERCE_DB"
+[0m23:28:44.108575 [debug] [ThreadPool]: On list_ECOMMERCE_DB: /* {"app": "dbt", "dbt_version": "1.4.9", "profile_name": "ecommerce", "target_name": "dev", "connection_name": "list_ECOMMERCE_DB"} */
+show terse schemas in database ECOMMERCE_DB
+    limit 10000
+[0m23:28:44.108834 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m23:28:45.089231 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 1 seconds
+[0m23:28:45.091433 [debug] [ThreadPool]: On list_ECOMMERCE_DB: Close
+[0m23:28:45.455253 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ECOMMERCE_DB_ANALYTICS'
+[0m23:28:45.469848 [debug] [ThreadPool]: Using snowflake connection "list_ECOMMERCE_DB_ANALYTICS"
+[0m23:28:45.470306 [debug] [ThreadPool]: On list_ECOMMERCE_DB_ANALYTICS: /* {"app": "dbt", "dbt_version": "1.4.9", "profile_name": "ecommerce", "target_name": "dev", "connection_name": "list_ECOMMERCE_DB_ANALYTICS"} */
+show terse objects in ECOMMERCE_DB.ANALYTICS
+[0m23:28:45.470788 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m23:28:46.271413 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 1 seconds
+[0m23:28:46.273619 [debug] [ThreadPool]: On list_ECOMMERCE_DB_ANALYTICS: Close
+[0m23:28:46.632822 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m23:28:46.633501 [info ] [MainThread]: 
+[0m23:28:46.637029 [debug] [Thread-1  ]: Began running node model.dbt_ecommerce.stg_customers
+[0m23:28:46.637426 [info ] [Thread-1  ]: 1 of 4 START sql view model ANALYTICS.stg_customers ............................ [RUN]
+[0m23:28:46.638795 [debug] [Thread-1  ]: Acquiring new snowflake connection 'model.dbt_ecommerce.stg_customers'
+[0m23:28:46.639105 [debug] [Thread-1  ]: Began compiling node model.dbt_ecommerce.stg_customers
+[0m23:28:46.641527 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_ecommerce.stg_customers"
+[0m23:28:46.642648 [debug] [Thread-1  ]: Timing info for model.dbt_ecommerce.stg_customers (compile): 2025-06-27 23:28:46.639868 => 2025-06-27 23:28:46.642568
+[0m23:28:46.642940 [debug] [Thread-1  ]: Began executing node model.dbt_ecommerce.stg_customers
+[0m23:28:46.679267 [debug] [Thread-1  ]: Writing runtime sql for node "model.dbt_ecommerce.stg_customers"
+[0m23:28:46.680831 [debug] [Thread-1  ]: Using snowflake connection "model.dbt_ecommerce.stg_customers"
+[0m23:28:46.681260 [debug] [Thread-1  ]: On model.dbt_ecommerce.stg_customers: /* {"app": "dbt", "dbt_version": "1.4.9", "profile_name": "ecommerce", "target_name": "dev", "node_id": "model.dbt_ecommerce.stg_customers"} */
+create or replace   view ECOMMERCE_DB.ANALYTICS.stg_customers
+  
+   as (
+    SELECT *
+FROM raw.customers
+  );
+[0m23:28:46.681762 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m23:28:47.768331 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 1 seconds
+[0m23:28:47.805153 [debug] [Thread-1  ]: Timing info for model.dbt_ecommerce.stg_customers (execute): 2025-06-27 23:28:46.643146 => 2025-06-27 23:28:47.805087
+[0m23:28:47.805661 [debug] [Thread-1  ]: On model.dbt_ecommerce.stg_customers: Close
+[0m23:28:48.150077 [info ] [Thread-1  ]: 1 of 4 OK created sql view model ANALYTICS.stg_customers ....................... [[32mSUCCESS 1[0m in 1.51s]
+[0m23:28:48.152093 [debug] [Thread-1  ]: Finished running node model.dbt_ecommerce.stg_customers
+[0m23:28:48.152502 [debug] [Thread-1  ]: Began running node model.dbt_ecommerce.stg_orders
+[0m23:28:48.153068 [info ] [Thread-1  ]: 2 of 4 START sql view model ANALYTICS.stg_orders ............................... [RUN]
+[0m23:28:48.153977 [debug] [Thread-1  ]: Acquiring new snowflake connection 'model.dbt_ecommerce.stg_orders'
+[0m23:28:48.154274 [debug] [Thread-1  ]: Began compiling node model.dbt_ecommerce.stg_orders
+[0m23:28:48.156319 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_ecommerce.stg_orders"
+[0m23:28:48.157045 [debug] [Thread-1  ]: Timing info for model.dbt_ecommerce.stg_orders (compile): 2025-06-27 23:28:48.154634 => 2025-06-27 23:28:48.156984
+[0m23:28:48.157887 [debug] [Thread-1  ]: Began executing node model.dbt_ecommerce.stg_orders
+[0m23:28:48.162380 [debug] [Thread-1  ]: Writing runtime sql for node "model.dbt_ecommerce.stg_orders"
+[0m23:28:48.163359 [debug] [Thread-1  ]: Using snowflake connection "model.dbt_ecommerce.stg_orders"
+[0m23:28:48.163745 [debug] [Thread-1  ]: On model.dbt_ecommerce.stg_orders: /* {"app": "dbt", "dbt_version": "1.4.9", "profile_name": "ecommerce", "target_name": "dev", "node_id": "model.dbt_ecommerce.stg_orders"} */
+create or replace   view ECOMMERCE_DB.ANALYTICS.stg_orders
+  
+   as (
+    SELECT *
+FROM raw.orders
+  );
+[0m23:28:48.163973 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m23:28:49.368490 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 1 seconds
+[0m23:28:49.371792 [debug] [Thread-1  ]: Timing info for model.dbt_ecommerce.stg_orders (execute): 2025-06-27 23:28:48.158111 => 2025-06-27 23:28:49.371730
+[0m23:28:49.372101 [debug] [Thread-1  ]: On model.dbt_ecommerce.stg_orders: Close
+[0m23:28:49.726436 [info ] [Thread-1  ]: 2 of 4 OK created sql view model ANALYTICS.stg_orders .......................... [[32mSUCCESS 1[0m in 1.57s]
+[0m23:28:49.727289 [debug] [Thread-1  ]: Finished running node model.dbt_ecommerce.stg_orders
+[0m23:28:49.727808 [debug] [Thread-1  ]: Began running node model.dbt_ecommerce.stg_shipments
+[0m23:28:49.728255 [info ] [Thread-1  ]: 3 of 4 START sql view model ANALYTICS.stg_shipments ............................ [RUN]
+[0m23:28:49.729162 [debug] [Thread-1  ]: Acquiring new snowflake connection 'model.dbt_ecommerce.stg_shipments'
+[0m23:28:49.729468 [debug] [Thread-1  ]: Began compiling node model.dbt_ecommerce.stg_shipments
+[0m23:28:49.731428 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_ecommerce.stg_shipments"
+[0m23:28:49.732160 [debug] [Thread-1  ]: Timing info for model.dbt_ecommerce.stg_shipments (compile): 2025-06-27 23:28:49.729832 => 2025-06-27 23:28:49.732098
+[0m23:28:49.732462 [debug] [Thread-1  ]: Began executing node model.dbt_ecommerce.stg_shipments
+[0m23:28:49.737260 [debug] [Thread-1  ]: Writing runtime sql for node "model.dbt_ecommerce.stg_shipments"
+[0m23:28:49.738548 [debug] [Thread-1  ]: Using snowflake connection "model.dbt_ecommerce.stg_shipments"
+[0m23:28:49.739045 [debug] [Thread-1  ]: On model.dbt_ecommerce.stg_shipments: /* {"app": "dbt", "dbt_version": "1.4.9", "profile_name": "ecommerce", "target_name": "dev", "node_id": "model.dbt_ecommerce.stg_shipments"} */
+create or replace   view ECOMMERCE_DB.ANALYTICS.stg_shipments
+  
+   as (
+    SELECT *
+FROM raw.shipments
+  );
+[0m23:28:49.739303 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m23:28:50.834306 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 1 seconds
+[0m23:28:50.837585 [debug] [Thread-1  ]: Timing info for model.dbt_ecommerce.stg_shipments (execute): 2025-06-27 23:28:49.733047 => 2025-06-27 23:28:50.837432
+[0m23:28:50.837922 [debug] [Thread-1  ]: On model.dbt_ecommerce.stg_shipments: Close
+[0m23:28:51.181704 [info ] [Thread-1  ]: 3 of 4 OK created sql view model ANALYTICS.stg_shipments ....................... [[32mSUCCESS 1[0m in 1.45s]
+[0m23:28:51.182547 [debug] [Thread-1  ]: Finished running node model.dbt_ecommerce.stg_shipments
+[0m23:28:51.183306 [debug] [Thread-1  ]: Began running node model.dbt_ecommerce.order_status
+[0m23:28:51.183828 [info ] [Thread-1  ]: 4 of 4 START sql view model ANALYTICS.order_status ............................. [RUN]
+[0m23:28:51.184828 [debug] [Thread-1  ]: Acquiring new snowflake connection 'model.dbt_ecommerce.order_status'
+[0m23:28:51.185165 [debug] [Thread-1  ]: Began compiling node model.dbt_ecommerce.order_status
+[0m23:28:51.189271 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_ecommerce.order_status"
+[0m23:28:51.190807 [debug] [Thread-1  ]: Timing info for model.dbt_ecommerce.order_status (compile): 2025-06-27 23:28:51.185514 => 2025-06-27 23:28:51.190720
+[0m23:28:51.191139 [debug] [Thread-1  ]: Began executing node model.dbt_ecommerce.order_status
+[0m23:28:51.195008 [debug] [Thread-1  ]: Writing runtime sql for node "model.dbt_ecommerce.order_status"
+[0m23:28:51.196645 [debug] [Thread-1  ]: Using snowflake connection "model.dbt_ecommerce.order_status"
+[0m23:28:51.196945 [debug] [Thread-1  ]: On model.dbt_ecommerce.order_status: /* {"app": "dbt", "dbt_version": "1.4.9", "profile_name": "ecommerce", "target_name": "dev", "node_id": "model.dbt_ecommerce.order_status"} */
+create or replace   view ECOMMERCE_DB.ANALYTICS.order_status
+  
+   as (
+    WITH base AS (
+  SELECT o.order_id, c.name AS customer_name, o.order_date, s.status,
+         s.shipped_at, s.delivered_at,
+         DATEDIFF('hour', s.shipped_at, s.delivered_at) AS delivery_hours
+  FROM ECOMMERCE_DB.ANALYTICS.stg_orders o
+  JOIN ECOMMERCE_DB.ANALYTICS.stg_shipments s ON o.order_id = s.order_id
+  JOIN ECOMMERCE_DB.ANALYTICS.stg_customers c ON o.customer_id = c.customer_id
+)
+
+SELECT *,
+       CASE WHEN status = 'shipped' AND delivery_hours > 48 THEN 'DELAYED' ELSE status END AS final_status
+FROM base
+  );
+[0m23:28:51.197189 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m23:28:52.284283 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 1 seconds
+[0m23:28:52.287492 [debug] [Thread-1  ]: Timing info for model.dbt_ecommerce.order_status (execute): 2025-06-27 23:28:51.191390 => 2025-06-27 23:28:52.287408
+[0m23:28:52.288060 [debug] [Thread-1  ]: On model.dbt_ecommerce.order_status: Close
+[0m23:28:52.642211 [info ] [Thread-1  ]: 4 of 4 OK created sql view model ANALYTICS.order_status ........................ [[32mSUCCESS 1[0m in 1.46s]
+[0m23:28:52.643644 [debug] [Thread-1  ]: Finished running node model.dbt_ecommerce.order_status
+[0m23:28:52.645091 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m23:28:52.645846 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m23:28:52.646122 [debug] [MainThread]: Connection 'list_ECOMMERCE_DB' was properly closed.
+[0m23:28:52.646359 [debug] [MainThread]: Connection 'model.dbt_ecommerce.order_status' was properly closed.
+[0m23:28:52.646766 [info ] [MainThread]: 
+[0m23:28:52.647464 [info ] [MainThread]: Finished running 4 view models in 0 hours 0 minutes and 8.56 seconds (8.56s).
+[0m23:28:52.649063 [debug] [MainThread]: Command end result
+[0m23:28:52.657194 [info ] [MainThread]: 
+[0m23:28:52.657923 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m23:28:52.658333 [info ] [MainThread]: 
+[0m23:28:52.658887 [info ] [MainThread]: Done. PASS=4 WARN=0 ERROR=0 SKIP=0 TOTAL=4
+[0m23:28:52.659400 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2025-06-27 23:30:33.839031 | 578ed7a1-67be-41c8-b1fe-49c44ade5f1e ==============================
+[0m23:30:33.839031 [info ] [MainThread]: Running with dbt=1.4.9
+[0m23:30:33.844545 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/home/atef/.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m23:30:33.844855 [debug] [MainThread]: Tracking: do not track
+[0m23:30:33.875678 [debug] [MainThread]: checksum: 07ac7676dbf91b944d5fe41bac352fb2dda62b33015cbd1e52faa2a2c71f6d73, vars: {}, profile: None, target: None, version: 1.4.9
+[0m23:30:33.920829 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m23:30:33.921728 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m23:30:33.938416 [info ] [MainThread]: Found 4 models, 0 tests, 0 snapshots, 0 analyses, 306 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+[0m23:30:33.940752 [info ] [MainThread]: 
+[0m23:30:33.942716 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m23:30:33.944020 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ECOMMERCE_DB'
+[0m23:30:33.961745 [debug] [ThreadPool]: Using snowflake connection "list_ECOMMERCE_DB"
+[0m23:30:33.962231 [debug] [ThreadPool]: On list_ECOMMERCE_DB: /* {"app": "dbt", "dbt_version": "1.4.9", "profile_name": "ecommerce", "target_name": "dev", "connection_name": "list_ECOMMERCE_DB"} */
+show terse schemas in database ECOMMERCE_DB
+    limit 10000
+[0m23:30:33.962785 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m23:30:34.966013 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 1 seconds
+[0m23:30:34.969377 [debug] [ThreadPool]: On list_ECOMMERCE_DB: Close
+[0m23:30:35.371676 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ECOMMERCE_DB_ANALYTICS'
+[0m23:30:35.385757 [debug] [ThreadPool]: Using snowflake connection "list_ECOMMERCE_DB_ANALYTICS"
+[0m23:30:35.386250 [debug] [ThreadPool]: On list_ECOMMERCE_DB_ANALYTICS: /* {"app": "dbt", "dbt_version": "1.4.9", "profile_name": "ecommerce", "target_name": "dev", "connection_name": "list_ECOMMERCE_DB_ANALYTICS"} */
+show terse objects in ECOMMERCE_DB.ANALYTICS
+[0m23:30:35.386886 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m23:30:36.372983 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 1 seconds
+[0m23:30:36.374905 [debug] [ThreadPool]: On list_ECOMMERCE_DB_ANALYTICS: Close
+[0m23:30:36.726132 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m23:30:36.727174 [info ] [MainThread]: 
+[0m23:30:36.736660 [debug] [Thread-1  ]: Began running node model.dbt_ecommerce.stg_customers
+[0m23:30:36.737968 [info ] [Thread-1  ]: 1 of 4 START sql view model ANALYTICS.stg_customers ............................ [RUN]
+[0m23:30:36.740130 [debug] [Thread-1  ]: Acquiring new snowflake connection 'model.dbt_ecommerce.stg_customers'
+[0m23:30:36.740640 [debug] [Thread-1  ]: Began compiling node model.dbt_ecommerce.stg_customers
+[0m23:30:36.742555 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_ecommerce.stg_customers"
+[0m23:30:36.743169 [debug] [Thread-1  ]: Timing info for model.dbt_ecommerce.stg_customers (compile): 2025-06-27 23:30:36.740957 => 2025-06-27 23:30:36.743100
+[0m23:30:36.743700 [debug] [Thread-1  ]: Began executing node model.dbt_ecommerce.stg_customers
+[0m23:30:36.775218 [debug] [Thread-1  ]: Writing runtime sql for node "model.dbt_ecommerce.stg_customers"
+[0m23:30:36.776547 [debug] [Thread-1  ]: Using snowflake connection "model.dbt_ecommerce.stg_customers"
+[0m23:30:36.776825 [debug] [Thread-1  ]: On model.dbt_ecommerce.stg_customers: /* {"app": "dbt", "dbt_version": "1.4.9", "profile_name": "ecommerce", "target_name": "dev", "node_id": "model.dbt_ecommerce.stg_customers"} */
+create or replace   view ECOMMERCE_DB.ANALYTICS.stg_customers
+  
+   as (
+    SELECT *
+FROM raw.customers
+  );
+[0m23:30:36.777057 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m23:30:37.892100 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 1 seconds
+[0m23:30:37.942470 [debug] [Thread-1  ]: Timing info for model.dbt_ecommerce.stg_customers (execute): 2025-06-27 23:30:36.743900 => 2025-06-27 23:30:37.942415
+[0m23:30:37.944018 [debug] [Thread-1  ]: On model.dbt_ecommerce.stg_customers: Close
+[0m23:30:38.287900 [info ] [Thread-1  ]: 1 of 4 OK created sql view model ANALYTICS.stg_customers ....................... [[32mSUCCESS 1[0m in 1.55s]
+[0m23:30:38.292999 [debug] [Thread-1  ]: Finished running node model.dbt_ecommerce.stg_customers
+[0m23:30:38.293903 [debug] [Thread-1  ]: Began running node model.dbt_ecommerce.stg_orders
+[0m23:30:38.295050 [info ] [Thread-1  ]: 2 of 4 START sql view model ANALYTICS.stg_orders ............................... [RUN]
+[0m23:30:38.297002 [debug] [Thread-1  ]: Acquiring new snowflake connection 'model.dbt_ecommerce.stg_orders'
+[0m23:30:38.297761 [debug] [Thread-1  ]: Began compiling node model.dbt_ecommerce.stg_orders
+[0m23:30:38.300304 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_ecommerce.stg_orders"
+[0m23:30:38.301451 [debug] [Thread-1  ]: Timing info for model.dbt_ecommerce.stg_orders (compile): 2025-06-27 23:30:38.298106 => 2025-06-27 23:30:38.301336
+[0m23:30:38.302175 [debug] [Thread-1  ]: Began executing node model.dbt_ecommerce.stg_orders
+[0m23:30:38.308051 [debug] [Thread-1  ]: Writing runtime sql for node "model.dbt_ecommerce.stg_orders"
+[0m23:30:38.309209 [debug] [Thread-1  ]: Using snowflake connection "model.dbt_ecommerce.stg_orders"
+[0m23:30:38.309577 [debug] [Thread-1  ]: On model.dbt_ecommerce.stg_orders: /* {"app": "dbt", "dbt_version": "1.4.9", "profile_name": "ecommerce", "target_name": "dev", "node_id": "model.dbt_ecommerce.stg_orders"} */
+create or replace   view ECOMMERCE_DB.ANALYTICS.stg_orders
+  
+   as (
+    SELECT *
+FROM raw.orders
+  );
+[0m23:30:38.309871 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m23:30:39.427425 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 1 seconds
+[0m23:30:39.444155 [debug] [Thread-1  ]: Timing info for model.dbt_ecommerce.stg_orders (execute): 2025-06-27 23:30:38.302841 => 2025-06-27 23:30:39.444042
+[0m23:30:39.445160 [debug] [Thread-1  ]: On model.dbt_ecommerce.stg_orders: Close
+[0m23:30:39.816382 [info ] [Thread-1  ]: 2 of 4 OK created sql view model ANALYTICS.stg_orders .......................... [[32mSUCCESS 1[0m in 1.52s]
+[0m23:30:39.819229 [debug] [Thread-1  ]: Finished running node model.dbt_ecommerce.stg_orders
+[0m23:30:39.820236 [debug] [Thread-1  ]: Began running node model.dbt_ecommerce.stg_shipments
+[0m23:30:39.822194 [info ] [Thread-1  ]: 3 of 4 START sql view model ANALYTICS.stg_shipments ............................ [RUN]
+[0m23:30:39.824751 [debug] [Thread-1  ]: Acquiring new snowflake connection 'model.dbt_ecommerce.stg_shipments'
+[0m23:30:39.826029 [debug] [Thread-1  ]: Began compiling node model.dbt_ecommerce.stg_shipments
+[0m23:30:39.829496 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_ecommerce.stg_shipments"
+[0m23:30:39.832394 [debug] [Thread-1  ]: Timing info for model.dbt_ecommerce.stg_shipments (compile): 2025-06-27 23:30:39.826364 => 2025-06-27 23:30:39.832315
+[0m23:30:39.833593 [debug] [Thread-1  ]: Began executing node model.dbt_ecommerce.stg_shipments
+[0m23:30:39.840602 [debug] [Thread-1  ]: Writing runtime sql for node "model.dbt_ecommerce.stg_shipments"
+[0m23:30:39.843267 [debug] [Thread-1  ]: Using snowflake connection "model.dbt_ecommerce.stg_shipments"
+[0m23:30:39.844594 [debug] [Thread-1  ]: On model.dbt_ecommerce.stg_shipments: /* {"app": "dbt", "dbt_version": "1.4.9", "profile_name": "ecommerce", "target_name": "dev", "node_id": "model.dbt_ecommerce.stg_shipments"} */
+create or replace   view ECOMMERCE_DB.ANALYTICS.stg_shipments
+  
+   as (
+    SELECT *
+FROM raw.shipments
+  );
+[0m23:30:39.844842 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m23:30:40.826269 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 1 seconds
+[0m23:30:40.842427 [debug] [Thread-1  ]: Timing info for model.dbt_ecommerce.stg_shipments (execute): 2025-06-27 23:30:39.833847 => 2025-06-27 23:30:40.842276
+[0m23:30:40.843870 [debug] [Thread-1  ]: On model.dbt_ecommerce.stg_shipments: Close
+[0m23:30:41.238853 [info ] [Thread-1  ]: 3 of 4 OK created sql view model ANALYTICS.stg_shipments ....................... [[32mSUCCESS 1[0m in 1.41s]
+[0m23:30:41.240217 [debug] [Thread-1  ]: Finished running node model.dbt_ecommerce.stg_shipments
+[0m23:30:41.241464 [debug] [Thread-1  ]: Began running node model.dbt_ecommerce.order_status
+[0m23:30:41.242193 [info ] [Thread-1  ]: 4 of 4 START sql view model ANALYTICS.order_status ............................. [RUN]
+[0m23:30:41.244043 [debug] [Thread-1  ]: Acquiring new snowflake connection 'model.dbt_ecommerce.order_status'
+[0m23:30:41.244788 [debug] [Thread-1  ]: Began compiling node model.dbt_ecommerce.order_status
+[0m23:30:41.252177 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_ecommerce.order_status"
+[0m23:30:41.253867 [debug] [Thread-1  ]: Timing info for model.dbt_ecommerce.order_status (compile): 2025-06-27 23:30:41.245289 => 2025-06-27 23:30:41.253620
+[0m23:30:41.254279 [debug] [Thread-1  ]: Began executing node model.dbt_ecommerce.order_status
+[0m23:30:41.261113 [debug] [Thread-1  ]: Writing runtime sql for node "model.dbt_ecommerce.order_status"
+[0m23:30:41.262854 [debug] [Thread-1  ]: Using snowflake connection "model.dbt_ecommerce.order_status"
+[0m23:30:41.263151 [debug] [Thread-1  ]: On model.dbt_ecommerce.order_status: /* {"app": "dbt", "dbt_version": "1.4.9", "profile_name": "ecommerce", "target_name": "dev", "node_id": "model.dbt_ecommerce.order_status"} */
+create or replace   view ECOMMERCE_DB.ANALYTICS.order_status
+  
+   as (
+    WITH base AS (
+  SELECT o.order_id, c.name AS customer_name, o.order_date, s.status,
+         s.shipped_at, s.delivered_at,
+         DATEDIFF('hour', s.shipped_at, s.delivered_at) AS delivery_hours
+  FROM ECOMMERCE_DB.ANALYTICS.stg_orders o
+  JOIN ECOMMERCE_DB.ANALYTICS.stg_shipments s ON o.order_id = s.order_id
+  JOIN ECOMMERCE_DB.ANALYTICS.stg_customers c ON o.customer_id = c.customer_id
+)
+
+SELECT *,
+       CASE WHEN status = 'shipped' AND delivery_hours > 48 THEN 'DELAYED' ELSE status END AS final_status
+FROM base
+  );
+[0m23:30:41.263437 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m23:30:42.655177 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 1 seconds
+[0m23:30:42.661595 [debug] [Thread-1  ]: Timing info for model.dbt_ecommerce.order_status (execute): 2025-06-27 23:30:41.254877 => 2025-06-27 23:30:42.661318
+[0m23:30:42.662173 [debug] [Thread-1  ]: On model.dbt_ecommerce.order_status: Close
+[0m23:30:43.005675 [info ] [Thread-1  ]: 4 of 4 OK created sql view model ANALYTICS.order_status ........................ [[32mSUCCESS 1[0m in 1.76s]
+[0m23:30:43.006506 [debug] [Thread-1  ]: Finished running node model.dbt_ecommerce.order_status
+[0m23:30:43.007579 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m23:30:43.008007 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m23:30:43.008184 [debug] [MainThread]: Connection 'list_ECOMMERCE_DB' was properly closed.
+[0m23:30:43.008356 [debug] [MainThread]: Connection 'model.dbt_ecommerce.order_status' was properly closed.
+[0m23:30:43.008752 [info ] [MainThread]: 
+[0m23:30:43.009231 [info ] [MainThread]: Finished running 4 view models in 0 hours 0 minutes and 9.07 seconds (9.07s).
+[0m23:30:43.009936 [debug] [MainThread]: Command end result
+[0m23:30:43.015072 [info ] [MainThread]: 
+[0m23:30:43.015877 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m23:30:43.016311 [info ] [MainThread]: 
+[0m23:30:43.016857 [info ] [MainThread]: Done. PASS=4 WARN=0 ERROR=0 SKIP=0 TOTAL=4
+[0m23:30:43.017355 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2025-06-27 23:40:47.669823 | d70ba3e0-3bea-450a-abae-33ea9ce4a751 ==============================
+[0m23:40:47.669823 [info ] [MainThread]: Running with dbt=1.4.9
+[0m23:40:47.673597 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/home/atef/.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m23:40:47.673903 [debug] [MainThread]: Tracking: do not track
+[0m23:40:47.706209 [debug] [MainThread]: checksum: 07ac7676dbf91b944d5fe41bac352fb2dda62b33015cbd1e52faa2a2c71f6d73, vars: {}, profile: None, target: None, version: 1.4.9
+[0m23:40:47.763157 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m23:40:47.763505 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m23:40:47.779883 [info ] [MainThread]: Found 4 models, 0 tests, 0 snapshots, 0 analyses, 306 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+[0m23:40:47.781993 [info ] [MainThread]: 
+[0m23:40:47.784096 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m23:40:47.785467 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ECOMMERCE_DB'
+[0m23:40:47.803438 [debug] [ThreadPool]: Using snowflake connection "list_ECOMMERCE_DB"
+[0m23:40:47.803999 [debug] [ThreadPool]: On list_ECOMMERCE_DB: /* {"app": "dbt", "dbt_version": "1.4.9", "profile_name": "ecommerce", "target_name": "dev", "connection_name": "list_ECOMMERCE_DB"} */
+show terse schemas in database ECOMMERCE_DB
+    limit 10000
+[0m23:40:47.804523 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m23:40:48.778492 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 1 seconds
+[0m23:40:48.781571 [debug] [ThreadPool]: On list_ECOMMERCE_DB: Close
+[0m23:40:49.144287 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ECOMMERCE_DB_ANALYTICS'
+[0m23:40:49.160770 [debug] [ThreadPool]: Using snowflake connection "list_ECOMMERCE_DB_ANALYTICS"
+[0m23:40:49.161249 [debug] [ThreadPool]: On list_ECOMMERCE_DB_ANALYTICS: /* {"app": "dbt", "dbt_version": "1.4.9", "profile_name": "ecommerce", "target_name": "dev", "connection_name": "list_ECOMMERCE_DB_ANALYTICS"} */
+show terse objects in ECOMMERCE_DB.ANALYTICS
+[0m23:40:49.161738 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m23:40:50.100233 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 1 seconds
+[0m23:40:50.102380 [debug] [ThreadPool]: On list_ECOMMERCE_DB_ANALYTICS: Close
+[0m23:40:50.460135 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m23:40:50.461098 [info ] [MainThread]: 
+[0m23:40:50.464154 [debug] [Thread-1  ]: Began running node model.dbt_ecommerce.stg_customers
+[0m23:40:50.464903 [info ] [Thread-1  ]: 1 of 4 START sql view model ANALYTICS.stg_customers ............................ [RUN]
+[0m23:40:50.465910 [debug] [Thread-1  ]: Acquiring new snowflake connection 'model.dbt_ecommerce.stg_customers'
+[0m23:40:50.466238 [debug] [Thread-1  ]: Began compiling node model.dbt_ecommerce.stg_customers
+[0m23:40:50.467992 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_ecommerce.stg_customers"
+[0m23:40:50.468753 [debug] [Thread-1  ]: Timing info for model.dbt_ecommerce.stg_customers (compile): 2025-06-27 23:40:50.466469 => 2025-06-27 23:40:50.468682
+[0m23:40:50.469160 [debug] [Thread-1  ]: Began executing node model.dbt_ecommerce.stg_customers
+[0m23:40:50.499174 [debug] [Thread-1  ]: Writing runtime sql for node "model.dbt_ecommerce.stg_customers"
+[0m23:40:50.500295 [debug] [Thread-1  ]: Using snowflake connection "model.dbt_ecommerce.stg_customers"
+[0m23:40:50.500699 [debug] [Thread-1  ]: On model.dbt_ecommerce.stg_customers: /* {"app": "dbt", "dbt_version": "1.4.9", "profile_name": "ecommerce", "target_name": "dev", "node_id": "model.dbt_ecommerce.stg_customers"} */
+create or replace   view ECOMMERCE_DB.ANALYTICS.stg_customers
+  
+   as (
+    SELECT *
+FROM raw.customers
+  );
+[0m23:40:50.500935 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m23:40:51.523438 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 1 seconds
+[0m23:40:51.545847 [debug] [Thread-1  ]: Timing info for model.dbt_ecommerce.stg_customers (execute): 2025-06-27 23:40:50.469360 => 2025-06-27 23:40:51.545786
+[0m23:40:51.546337 [debug] [Thread-1  ]: On model.dbt_ecommerce.stg_customers: Close
+[0m23:40:51.895084 [info ] [Thread-1  ]: 1 of 4 OK created sql view model ANALYTICS.stg_customers ....................... [[32mSUCCESS 1[0m in 1.43s]
+[0m23:40:51.901108 [debug] [Thread-1  ]: Finished running node model.dbt_ecommerce.stg_customers
+[0m23:40:51.902177 [debug] [Thread-1  ]: Began running node model.dbt_ecommerce.stg_orders
+[0m23:40:51.903332 [info ] [Thread-1  ]: 2 of 4 START sql view model ANALYTICS.stg_orders ............................... [RUN]
+[0m23:40:51.905224 [debug] [Thread-1  ]: Acquiring new snowflake connection 'model.dbt_ecommerce.stg_orders'
+[0m23:40:51.906284 [debug] [Thread-1  ]: Began compiling node model.dbt_ecommerce.stg_orders
+[0m23:40:51.909162 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_ecommerce.stg_orders"
+[0m23:40:51.910260 [debug] [Thread-1  ]: Timing info for model.dbt_ecommerce.stg_orders (compile): 2025-06-27 23:40:51.906844 => 2025-06-27 23:40:51.910147
+[0m23:40:51.911018 [debug] [Thread-1  ]: Began executing node model.dbt_ecommerce.stg_orders
+[0m23:40:51.915854 [debug] [Thread-1  ]: Writing runtime sql for node "model.dbt_ecommerce.stg_orders"
+[0m23:40:51.917055 [debug] [Thread-1  ]: Using snowflake connection "model.dbt_ecommerce.stg_orders"
+[0m23:40:51.917539 [debug] [Thread-1  ]: On model.dbt_ecommerce.stg_orders: /* {"app": "dbt", "dbt_version": "1.4.9", "profile_name": "ecommerce", "target_name": "dev", "node_id": "model.dbt_ecommerce.stg_orders"} */
+create or replace   view ECOMMERCE_DB.ANALYTICS.stg_orders
+  
+   as (
+    SELECT *
+FROM raw.orders
+  );
+[0m23:40:51.917852 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m23:40:53.056889 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 1 seconds
+[0m23:40:53.098269 [debug] [Thread-1  ]: Timing info for model.dbt_ecommerce.stg_orders (execute): 2025-06-27 23:40:51.911496 => 2025-06-27 23:40:53.098171
+[0m23:40:53.106711 [debug] [Thread-1  ]: On model.dbt_ecommerce.stg_orders: Close
+[0m23:40:53.594071 [info ] [Thread-1  ]: 2 of 4 OK created sql view model ANALYTICS.stg_orders .......................... [[32mSUCCESS 1[0m in 1.69s]
+[0m23:40:53.595016 [debug] [Thread-1  ]: Finished running node model.dbt_ecommerce.stg_orders
+[0m23:40:53.595518 [debug] [Thread-1  ]: Began running node model.dbt_ecommerce.stg_shipments
+[0m23:40:53.595939 [info ] [Thread-1  ]: 3 of 4 START sql view model ANALYTICS.stg_shipments ............................ [RUN]
+[0m23:40:53.596981 [debug] [Thread-1  ]: Acquiring new snowflake connection 'model.dbt_ecommerce.stg_shipments'
+[0m23:40:53.597271 [debug] [Thread-1  ]: Began compiling node model.dbt_ecommerce.stg_shipments
+[0m23:40:53.599171 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_ecommerce.stg_shipments"
+[0m23:40:53.600043 [debug] [Thread-1  ]: Timing info for model.dbt_ecommerce.stg_shipments (compile): 2025-06-27 23:40:53.597604 => 2025-06-27 23:40:53.599955
+[0m23:40:53.600513 [debug] [Thread-1  ]: Began executing node model.dbt_ecommerce.stg_shipments
+[0m23:40:53.605259 [debug] [Thread-1  ]: Writing runtime sql for node "model.dbt_ecommerce.stg_shipments"
+[0m23:40:53.606603 [debug] [Thread-1  ]: Using snowflake connection "model.dbt_ecommerce.stg_shipments"
+[0m23:40:53.606910 [debug] [Thread-1  ]: On model.dbt_ecommerce.stg_shipments: /* {"app": "dbt", "dbt_version": "1.4.9", "profile_name": "ecommerce", "target_name": "dev", "node_id": "model.dbt_ecommerce.stg_shipments"} */
+create or replace   view ECOMMERCE_DB.ANALYTICS.stg_shipments
+  
+   as (
+    SELECT *
+FROM raw.shipments
+  );
+[0m23:40:53.607152 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m23:40:54.751436 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 1 seconds
+[0m23:40:54.756224 [debug] [Thread-1  ]: Timing info for model.dbt_ecommerce.stg_shipments (execute): 2025-06-27 23:40:53.600868 => 2025-06-27 23:40:54.756173
+[0m23:40:54.756755 [debug] [Thread-1  ]: On model.dbt_ecommerce.stg_shipments: Close
+[0m23:40:55.101255 [info ] [Thread-1  ]: 3 of 4 OK created sql view model ANALYTICS.stg_shipments ....................... [[32mSUCCESS 1[0m in 1.50s]
+[0m23:40:55.103352 [debug] [Thread-1  ]: Finished running node model.dbt_ecommerce.stg_shipments
+[0m23:40:55.104818 [debug] [Thread-1  ]: Began running node model.dbt_ecommerce.order_status
+[0m23:40:55.105394 [info ] [Thread-1  ]: 4 of 4 START sql view model ANALYTICS.order_status ............................. [RUN]
+[0m23:40:55.106979 [debug] [Thread-1  ]: Acquiring new snowflake connection 'model.dbt_ecommerce.order_status'
+[0m23:40:55.107417 [debug] [Thread-1  ]: Began compiling node model.dbt_ecommerce.order_status
+[0m23:40:55.112114 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_ecommerce.order_status"
+[0m23:40:55.113071 [debug] [Thread-1  ]: Timing info for model.dbt_ecommerce.order_status (compile): 2025-06-27 23:40:55.107936 => 2025-06-27 23:40:55.112996
+[0m23:40:55.113765 [debug] [Thread-1  ]: Began executing node model.dbt_ecommerce.order_status
+[0m23:40:55.119308 [debug] [Thread-1  ]: Writing runtime sql for node "model.dbt_ecommerce.order_status"
+[0m23:40:55.121235 [debug] [Thread-1  ]: Using snowflake connection "model.dbt_ecommerce.order_status"
+[0m23:40:55.121534 [debug] [Thread-1  ]: On model.dbt_ecommerce.order_status: /* {"app": "dbt", "dbt_version": "1.4.9", "profile_name": "ecommerce", "target_name": "dev", "node_id": "model.dbt_ecommerce.order_status"} */
+create or replace   view ECOMMERCE_DB.ANALYTICS.order_status
+  
+   as (
+    WITH base AS (
+  SELECT o.order_id, c.name AS customer_name, o.order_date, s.status,
+         s.shipped_at, s.delivered_at,
+         DATEDIFF('hour', s.shipped_at, s.delivered_at) AS delivery_hours
+  FROM ECOMMERCE_DB.ANALYTICS.stg_orders o
+  JOIN ECOMMERCE_DB.ANALYTICS.stg_shipments s ON o.order_id = s.order_id
+  JOIN ECOMMERCE_DB.ANALYTICS.stg_customers c ON o.customer_id = c.customer_id
+)
+
+SELECT *,
+       CASE WHEN status = 'shipped' AND delivery_hours > 48 THEN 'DELAYED' ELSE status END AS final_status
+FROM base
+  );
+[0m23:40:55.121926 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m23:40:56.390118 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 1 seconds
+[0m23:40:56.392949 [debug] [Thread-1  ]: Timing info for model.dbt_ecommerce.order_status (execute): 2025-06-27 23:40:55.114019 => 2025-06-27 23:40:56.392900
+[0m23:40:56.393233 [debug] [Thread-1  ]: On model.dbt_ecommerce.order_status: Close
+[0m23:40:56.739923 [info ] [Thread-1  ]: 4 of 4 OK created sql view model ANALYTICS.order_status ........................ [[32mSUCCESS 1[0m in 1.63s]
+[0m23:40:56.740832 [debug] [Thread-1  ]: Finished running node model.dbt_ecommerce.order_status
+[0m23:40:56.742101 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m23:40:56.742775 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m23:40:56.743032 [debug] [MainThread]: Connection 'list_ECOMMERCE_DB' was properly closed.
+[0m23:40:56.743254 [debug] [MainThread]: Connection 'model.dbt_ecommerce.order_status' was properly closed.
+[0m23:40:56.743677 [info ] [MainThread]: 
+[0m23:40:56.744229 [info ] [MainThread]: Finished running 4 view models in 0 hours 0 minutes and 8.96 seconds (8.96s).
+[0m23:40:56.745042 [debug] [MainThread]: Command end result
+[0m23:40:56.754044 [info ] [MainThread]: 
+[0m23:40:56.754993 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m23:40:56.755539 [info ] [MainThread]: 
+[0m23:40:56.756143 [info ] [MainThread]: Done. PASS=4 WARN=0 ERROR=0 SKIP=0 TOTAL=4
+[0m23:40:56.756843 [debug] [MainThread]: Flushing usage events

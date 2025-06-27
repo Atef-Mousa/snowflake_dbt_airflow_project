@@ -1,5 +1,7 @@
+version: '1.0'
 name: 'dbt_ecommerce'
 profile: 'ecommerce'
+config-version: 2
 
 models:
   dbt_ecommerce:

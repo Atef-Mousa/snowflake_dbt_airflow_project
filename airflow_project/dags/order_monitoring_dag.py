@@ -24,22 +24,22 @@ with DAG(
     start_date=days_ago(1),
     catchup=False
 ) as dag:
+    
+    upload_data =  BashOperator(
+        task_id='upload_real_time_data_to_snowflake',
+        bash_command='source "/home/atef/project/E-Commerce-Order-Pipeline/snowflake_env/bin/activate" && python /home/atef/project/E-Commerce-Order-Pipeline/upload_data/upload_to_snowflake.py '
+
+    )
 
     dbt_run = BashOperator(
         task_id='run_dbt_models',
-        bash_command='source "/home/atef/dbt_env/bin/activate" && cd "/home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce" && dbt run'
-        # bash_command='source "/Users/zafarimam/Documents/E-Commerce Order Pipeline/airflow_venv_39/bin/activate" && cd "/Users/zafarimam/Documents/E-Commerce Order Pipeline/dbt_ecommerce" && dbt run'
+        bash_command='source "/home/atef/project/E-Commerce-Order-Pipeline/dbt_env/bin/activate" && cd "/home/atef/project/E-Commerce-Order-Pipeline/dbt_ecommerce" && dbt run'
 
     )
 
     check_orders = BashOperator(
     task_id='check_delayed_orders',
-    bash_command='source /home/atef/project/E-Commerce-Order-Pipeline/airflow_venv_39/bin/activate && python /home/atef/project/E-Commerce-Order-Pipeline/airflow_project/dags/utils/check_delayed_orders.py',
-    email_on_failure=True,
+    bash_command='source /home/atef/project/E-Commerce-Order-Pipeline/airflow_venv_39/bin/activate && python /home/atef/project/E-Commerce-Order-Pipeline/airflow_project/dags/utils/check_delayed_orders.py'
     )
-    # check_orders = BashOperator(
-    #     task_id='check_delayed_orders',
-    #     bash_command='source "/home/atef/project/E-Commerce-Order-Pipeline/airflow_venv_39/bin/activate" && python "/home/atef/project/E-Commerce-Order-Pipeline/airflow_project/dags/utils/check_delayed_orders.py"'
-    # )
-
-    dbt_run >> check_orders
+   
+    upload_data >> dbt_run >> check_orders
